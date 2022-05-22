@@ -1,14 +1,12 @@
-@import 'assets/scss/valuable';
-@import 'assets/scss/animation';
-
-#vesting {
+#staking {
   color: #fff;
   position: relative;
   z-index: 1;
   .tab {
+    width: 920px;
+    margin: 40px auto 0;
     display: flex;
     justify-content: center;
-    margin: 40px auto 0;
     .item {
       display: block;
       background: url('/assets/img/button2.png') no-repeat center center / 100%

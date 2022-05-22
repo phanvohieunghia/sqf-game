@@ -1,8 +1,6 @@
-// html {
-//   background-image: linear-gradient(180deg, #00123a 10%, #010c10 90%);
-// }
 .App {
-  background-image: linear-gradient(180deg, #00123a 10%, #010c10 90%);
+  // background-image: linear-gradient(180deg, #00123a 10%, #010c10 90%);
+  background: url('/assets/img/background.jfif') no-repeat center / 100%;
   background-attachment: fixed;
   z-index: -1;
 }
@@ -11,6 +9,8 @@ main {
   overflow: hidden;
   position: relative;
   z-index: 0;
+  height: 100vh;
+  overflow-y: scroll;
 }
 ::-webkit-scrollbar {
   width: 0;
