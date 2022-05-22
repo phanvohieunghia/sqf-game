@@ -1,0 +1,35 @@
+header {
+  margin: 24px;
+  background-color: rgba(244, 205, 244, 0.2);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  .hd-items {
+    display: flex;
+    .item {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      margin: 12.5px 20px 12.5px 12.5px;
+      img {
+        height: 40px;
+        width: 40px;
+      }
+      span {
+        font-size: 18px;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: #fff;
+      }
+    }
+  }
+  .btn {
+    background: url('/assets/img/button.png') no-repeat center / contain;
+    margin: 12.5px 15px 12.5px 0;
+    width: 146px;
+    height: 40px;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 18px;
+  }
+}

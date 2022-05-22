@@ -1,0 +1,34 @@
+#vesting {
+  .box {
+    width: 1024px;
+    margin: 56px auto 0;
+    display: flex;
+    .item {
+      flex-basis: 50%;
+    }
+    .left {
+      background-color: rgba(26, 56, 101, 0.22);
+      border-radius: 5px;
+      border: 1px solid rgba(108, 165, 214, 0.8);
+      padding: 16px 0;
+      text-align: center;
+      img {
+        max-width: 58%;
+      }
+    }
+    .right {
+      margin: 20px;
+      padding-left: 48px;
+      letter-spacing: 1.2px;
+      h1 {
+        font-size: 34px;
+        padding-top: 46px;
+        padding-bottom: 32px;
+        font-size: 700;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}

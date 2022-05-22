@@ -1,0 +1,31 @@
+@import 'assets/scss/valuable';
+@import 'assets/scss/animation';
+
+#vesting {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  .tab {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto 0;
+    .item {
+      display: block;
+      background: url('/assets/img/button2.png') no-repeat center center /
+        contain;
+      text-align: center;
+      height: 48px;
+      width: 200px;
+      line-height: 48px;
+      margin-left: 48px;
+      margin-right: 48px;
+      font-size: 16px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .item.active {
+      background: url('/assets/img/button2-active.png') no-repeat center center /
+        contain;
+    }
+  }
+}

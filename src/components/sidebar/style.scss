@@ -1,0 +1,37 @@
+.sidebar {
+  width: 245px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  height: 100%;
+  border-right: 1px solid #fff;
+  .img {
+    text-align: center;
+    margin-bottom: 16px;
+    img {
+      padding: 15px 20px;
+    }
+  }
+  a {
+    height: 58px;
+    text-align: center;
+    background-image: url('/assets/img/button3.png');
+    color: #fff !important;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 58px;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  a:last-child {
+    border-bottom: 1px solid #fff;
+  }
+  a.active {
+    background-image: url('/assets/img/button3-active.png');
+  }
+}
