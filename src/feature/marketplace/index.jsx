@@ -2,7 +2,7 @@ import React from 'react'
 
 import './style.scss'
 import Domdom from 'components/domdom'
-import Pagination from './pagination'
+import Pagination from 'components/pagination'
 import Icons from 'assets/icons'
 
 const MarketPlace = () => {

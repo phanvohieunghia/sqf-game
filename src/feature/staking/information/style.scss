@@ -1,0 +1,42 @@
+#staking {
+  .information {
+    h3 {
+      margin: 32px 16px;
+      font-size: 32px;
+    }
+    .info-box {
+      display: flex;
+      justify-content: center;
+      .left {
+        flex-basis: 50%;
+        margin-left: 20px;
+        background-color: rgba(26, 56, 101, 0.22);
+        border: 1px solid #92a2be;
+        padding: 10px;
+        p {
+          font-size: 14px;
+          margin-bottom: 24px;
+        }
+      }
+      .right {
+        flex-basis: 50%;
+        table {
+          margin-left: 20px;
+          background-color: rgba(26, 56, 101, 0.22);
+          width: 100%;
+          tr {
+            min-width: 120px;
+            th,
+            td {
+              border: 1px solid #92a2be;
+              min-width: 120px;
+              padding: 8px 6px;
+              text-align: center;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
