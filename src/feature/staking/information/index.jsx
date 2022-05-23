@@ -28,72 +28,76 @@ const Information = () => {
         </div>
         <div className="right">
           <table>
-            <tr>
-              <th>&nbsp;</th>
-              <th>Number of egg baskets</th>
-              <th>Number of people can buy</th>
-              <th>Total egg baskets</th>
-            </tr>
-            <tr>
-              <td>Tier 1</td>
-              <td>13</td>
-              <td>1</td>
-              <td> 13</td>
-            </tr>
-            <tr>
-              <td>Tier 2</td>
-              <td>12</td>
-              <td>2</td>
-              <td> 24</td>
-            </tr>
-            <tr>
-              <td>Tier 3</td>
-              <td>11</td>
-              <td>3</td>
-              <td> 33</td>
-            </tr>
-            <tr>
-              <td>Tier 4</td>
-              <td>10</td>
-              <td>5</td>
-              <td> 50</td>
-            </tr>
-            <tr>
-              <td>Tier 5</td>
-              <td>9</td>
-              <td>15</td>
-              <td>135</td>
-            </tr>
-            <tr>
-              <td>Tier 6</td>
-              <td>8</td>
-              <td>20</td>
-              <td>160</td>
-            </tr>
-            <tr>
-              <td>Tier 7</td>
-              <td>7</td>
-              <td>50</td>
-              <td>350</td>
-            </tr>
-            <tr>
-              <td>Tier 8</td>
-              <td>6</td>
-              <td>100</td>
-              <td>600</td>
-            </tr>
-            <tr>
-              <td>Tier 9</td>
-              <td>5</td>
-              <td>200</td>
-              <td>1000</td>
-            </tr>
-            <tr>
-              <td>200 Random</td>
-              <td>4</td>
-              <td>200</td>
-              <td>800</td>
-            </tr>
+            <thead>
+              <tr>
+                <th>&nbsp;</th>
+                <th>Number of egg baskets</th>
+                <th>Number of people can buy</th>
+                <th>Total egg baskets</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tier 1</td>
+                <td>13</td>
+                <td>1</td>
+                <td> 13</td>
+              </tr>
+              <tr>
+                <td>Tier 2</td>
+                <td>12</td>
+                <td>2</td>
+                <td> 24</td>
+              </tr>
+              <tr>
+                <td>Tier 3</td>
+                <td>11</td>
+                <td>3</td>
+                <td> 33</td>
+              </tr>
+              <tr>
+                <td>Tier 4</td>
+                <td>10</td>
+                <td>5</td>
+                <td> 50</td>
+              </tr>
+              <tr>
+                <td>Tier 5</td>
+                <td>9</td>
+                <td>15</td>
+                <td>135</td>
+              </tr>
+              <tr>
+                <td>Tier 6</td>
+                <td>8</td>
+                <td>20</td>
+                <td>160</td>
+              </tr>
+              <tr>
+                <td>Tier 7</td>
+                <td>7</td>
+                <td>50</td>
+                <td>350</td>
+              </tr>
+              <tr>
+                <td>Tier 8</td>
+                <td>6</td>
+                <td>100</td>
+                <td>600</td>
+              </tr>
+              <tr>
+                <td>Tier 9</td>
+                <td>5</td>
+                <td>200</td>
+                <td>1000</td>
+              </tr>
+              <tr>
+                <td>200 Random</td>
+                <td>4</td>
+                <td>200</td>
+                <td>800</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>

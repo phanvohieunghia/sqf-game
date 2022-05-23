@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
-
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 import './style.scss'
 
 const Sidebar = () => {
-  let location = useLocation()
   return (
     <div className="sidebar">
       <div className="img">

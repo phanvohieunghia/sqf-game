@@ -1,0 +1,21 @@
+@import 'assets/scss/valuable';
+
+.sidebar-mobile {
+  background: linear-gradient(0deg, #3a978b, #2650a5);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .list {
+    .item {
+      font-size: 24px;
+      color: $white-color;
+      padding: 16px 0;
+    }
+  }
+}
