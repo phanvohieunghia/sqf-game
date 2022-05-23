@@ -17,6 +17,11 @@ const Layout = () => {
       {window.innerWidth < 1024 && <MenuMobile />}
       <main>
         <Domdom />
+        {window.innerWidth < 1024 && (
+          <div className="logo">
+            <img src={require('assets/img/logo.png')} alt="error png" />
+          </div>
+        )}
         <Header />
         <Outlet />
         <Popup />

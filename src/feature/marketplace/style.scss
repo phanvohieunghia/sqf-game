@@ -1,4 +1,5 @@
 @import 'assets/scss/valuable';
+@import 'assets/scss/responsive';
 
 #marketplace {
   .main {
@@ -191,6 +192,63 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+  @include media('screen', '<laptop') {
+    .main {
+      .summary {
+        > div {
+          flex-direction: column;
+        }
+        .container {
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: 0;
+          padding-right: 0;
+          max-width: 100%;
+          .item {
+            display: flex;
+            .infor {
+              flex-grow: 1;
+            }
+          }
+        }
+      }
+      .tab {
+        width: 100%;
+      }
+    }
+  }
+  @include media('screen', '<tablet') {
+    .main {
+      .tab {
+        .item {
+          margin-left: 6px;
+          margin-right: 6px;
+          width: 140px;
+        }
+      }
+      .filter {
+        .select {
+          margin-bottom: 8px;
+        }
+        .input {
+          margin-left: 8px;
+          margin-right: 8px;
+          width: calc(100% - 16px);
+        }
+      }
+    }
+  }
+  @include media('screen', '<mobileL') {
+    .main {
+      .filter {
+        .select {
+          margin-left: 8px;
+          margin-right: 8px;
+          width: calc(100% - 16px - 56px);
         }
       }
     }

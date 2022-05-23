@@ -112,7 +112,7 @@ const MarketPlace = () => {
 }
 const Item = () => {
   return (
-    <div className="item col-2">
+    <div className="item col-6 col-sm-2">
       <div className="wrapper">
         <div className="title">
           <img src={require('assets/img/title.png')} alt="error png" />

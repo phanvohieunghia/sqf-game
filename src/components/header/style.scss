@@ -1,3 +1,5 @@
+@import 'assets/scss/responsive';
+
 header {
   margin: 24px;
   background-color: rgba(244, 205, 244, 0.2);
@@ -31,5 +33,9 @@ header {
     vertical-align: middle;
     color: #fff;
     font-size: 18px;
+  }
+  @include media('screen', '<laptop') {
+    flex-direction: column;
+    align-items: center;
   }
 }
