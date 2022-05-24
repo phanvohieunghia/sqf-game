@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './style.scss'
 import Domdom from 'components/domdom'
 import Pagination from 'components/pagination'
 import Icons from 'assets/icons'
+// import ItemList from 'assets/data/items.json'
 
 const MarketPlace = () => {
   return (
@@ -62,58 +64,28 @@ const MarketPlace = () => {
           </div>
         </div>
         <div className="list-item">
-          <div className="container">
-            <div className="row">
-              <Item />
-              <Item />
-              <Item />
-              <Item />
-              <Item />
-              <Item />
-            </div>
-            <div className="row">
-              <Item />
-              <Item />
-              <Item />
-              <Item />
-              <Item />
-              <Item />
-            </div>
-            <div className="row">
-              <Item />
-              <Item />
-              <Item />
-              <Item />
-              <Item />
-              <Item />
-            </div>
-            <div className="row">
-              <Item />
-              <Item />
-              <Item />
-              <Item />
-              <Item />
-              <Item />
-            </div>
-            <div className="row">
-              <Item />
-              <Item />
-              <Item />
-              <Item />
-              <Item />
-              <Item />
-            </div>
-          </div>
+          <div className="container">{renderItemList()}</div>
         </div>
       </div>
       <Pagination />
     </div>
   )
 }
-const Item = () => {
+function renderItemList() {
+  const items = []
+  for (var i = 0; i < 4; i++) {
+    const itemRow = []
+    for (var j = 0; j < 6; j++) {
+      itemRow.push(<Item id={i * 6 + j} />)
+    }
+    items.push(<div className="row">{itemRow}</div>)
+  }
+  return items
+}
+const Item = ({ id }) => {
   return (
-    <div className="item col-6 col-sm-2">
-      <div className="wrapper">
+    <div className="item col-6 col-sm-2" key={id}>
+      <Link className="wrapper" to={'/marketplace/' + id}>
         <div className="title">
           <img src={require('assets/img/title.png')} alt="error png" />
           <span>ID: 3165</span>
@@ -130,7 +102,7 @@ const Item = () => {
             <span className="convertCoin">~ 89.70 BUSD</span>
           </span>
         </div>
-      </div>
+      </Link>
     </div>
   )
 }

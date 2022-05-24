@@ -4,12 +4,19 @@ import { Route, Routes } from 'react-router-dom'
 import Layout from 'layout'
 import Dashboard from 'feature/dashborad'
 import MarketplacePage from 'feature/marketplace'
+import DetailPage from 'feature/marketplace/detail'
+
 import StakingPage from 'feature/staking'
 import AcountStaking from 'feature/staking/account'
 import LeaderboardStaking from 'feature/staking/leaderboard'
 import InformationStaking from 'feature/staking/information'
+
 import VestingPage from 'feature/vesting'
-import PublicSale from 'feature/vesting/publicsale'
+import PublicSale from 'feature/vesting/public-sale'
+import Airdrop from 'feature/vesting/airdrop'
+import Presale from 'feature/vesting/presale'
+import PrivateSale from 'feature/vesting/private-sale'
+import PublicSaleOld from 'feature/vesting/publicsale-old'
 import ComingSoonVesting from 'feature/vesting/comingsoon'
 
 const Router = () => {
@@ -18,6 +25,8 @@ const Router = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<Dashboard />} />
         <Route path="marketplace" element={<MarketplacePage />} />
+        <Route path="marketplace/:itemId" element={<DetailPage />} />
+
         <Route path="egg-baskets" element={<MarketplacePage />} />
         <Route path="my-assets" element={<MarketplacePage />} />
         <Route path="staking" element={<StakingPage />}>
@@ -27,11 +36,13 @@ const Router = () => {
           <Route path="information" element={<InformationStaking />} />
         </Route>
         <Route path="vesting" element={<VestingPage />}>
+          {/* <Route index element={<PublicSaleOld />} />
+          <Route path="public-sale" element={<PublicSaleOld />} /> */}
           <Route index element={<PublicSale />} />
           <Route path="public-sale" element={<PublicSale />} />
-          <Route path="private-sale" element={<ComingSoonVesting />} />
-          <Route path="airdrop" element={<ComingSoonVesting />} />
-          <Route path="airdrop-2" element={<ComingSoonVesting />} />
+          <Route path="private-sale" element={<PrivateSale />} />
+          <Route path="presale" element={<Presale />} />
+          <Route path="airdrop" element={<Airdrop />} />
         </Route>
       </Route>
     </Routes>
