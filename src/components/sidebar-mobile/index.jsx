@@ -35,13 +35,6 @@ const SidebarMobile = () => {
             <NavLink onClick={handleItem} className="item" to="/vesting">
               Vesting
             </NavLink>
-
-            {/* <div className="item">Dashboard</div>
-            <div className="item">Egg baskets</div>
-            <div className="item">My Assets</div>
-            <div className="item">Marketplace</div>
-            <div className="item">Staking</div>
-            <div className="item">Vesting</div> */}
           </div>
         </div>
       )}

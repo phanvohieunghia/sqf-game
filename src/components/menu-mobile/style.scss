@@ -5,65 +5,45 @@
   padding: 20px;
   z-index: 20;
   height: 80px;
-  .nav__icon-soft {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    height: 100%;
+  width: 80px;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.63);
   }
-
-  .nav__icon-soft span {
-    display: block;
-    height: 3px;
-    width: 40px;
+  .nav-icon {
+    margin: 0;
+    width: 30px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 30;
+  }
+  .nav-icon:after,
+  .nav-icon:before,
+  .nav-icon div {
     background-color: #fff;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
+    border-radius: 3px;
+    content: '';
+    display: block;
+    height: 2px;
+    margin: 7px 0;
+    transition: all 0.2s ease-in-out;
   }
-
-  .nav__icon-soft span + span {
-    margin-top: 8px;
+  .nav-icon.closed:before {
+    transform: translateY(3px) translateX(-2px) rotate(135deg);
+    width: 17px;
   }
-  .icon-translate {
-    transition: all 0.3s;
-    overflow: hidden;
-    span:first-child {
-      transform: rotate(45deg) translate(7px, 6px);
-    }
-    span:nth-child(2) {
-      transform: translateX(-100%);
-    }
-    span:nth-child(3) {
-      transform: rotate(-45deg) translate(10px, -9px);
-    }
-  }
-  .icon-translate {
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    overflow: hidden;
-  }
-
-  .icon-translate span:first-child {
-    -webkit-transform: rotate(45deg) translate(7px, 6px);
-    transform: rotate(45deg) translate(7px, 6px);
-  }
-
-  .icon-translate span:nth-child(2) {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-
-  .icon-translate span:nth-child(3) {
-    -webkit-transform: rotate(-45deg) translate(10px, -9px);
-    transform: rotate(-45deg) translate(10px, -9px);
+  .nav-icon.closed:after {
+    transform: translateY(-3px) translateX(-2px) rotate(-135deg);
+    width: 17px;
   }
 }

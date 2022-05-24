@@ -14,12 +14,10 @@ const Button = () => {
   return (
     <div className="menu">
       <div
-        className={'nav__icon-soft' + (state ? ' icon-translate' : '')}
+        className={'nav-icon' + (state ? ' closed' : '')}
         onClick={handleButton}
       >
-        <span></span>
-        <span></span>
-        <span></span>
+        <div></div>
       </div>
     </div>
   )
