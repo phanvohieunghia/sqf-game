@@ -7,8 +7,8 @@ import Token from 'components/token'
 const Airdrop = () => {
   return (
     <>
-      <NFTs />
       <Token />
+      <NFTs />
     </>
   )
 }

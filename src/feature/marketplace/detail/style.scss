@@ -1,4 +1,5 @@
 @import 'assets/scss/valuable';
+@import 'assets/scss/responsive';
 
 #detail {
   position: relative;
@@ -41,6 +42,7 @@
           }
         }
         .price {
+          margin-top: 16px;
           img {
             width: 34px;
           }
@@ -82,7 +84,7 @@
           border-radius: 5px;
           border: 1px solid rgba(108, 165, 214, 0.8);
           padding: 24px 32px;
-          min-height: 300px;
+          min-height: 360px;
           .item {
             margin-bottom: 16px;
             font-size: 18px;
@@ -91,6 +93,15 @@
             }
           }
         }
+      }
+    }
+  }
+  @include media('screen', '<tablet') {
+    .tab {
+      .item {
+        margin-left: 6px;
+        margin-right: 6px;
+        width: 140px;
       }
     }
   }
