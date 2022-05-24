@@ -251,6 +251,24 @@
           width: calc(100% - 16px - 56px);
         }
       }
+      .list-item .container .row .item .wrapper {
+        .title span {
+          font-size: 15px;
+        }
+        .img img {
+          height: 100px;
+        }
+        .price {
+          > .coins {
+            .cCoin {
+              font-size: 14px;
+            }
+            .convertCoin {
+              font-size: 10px;
+            }
+          }
+        }
+      }
     }
   }
 }

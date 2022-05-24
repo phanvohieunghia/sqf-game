@@ -1,5 +1,6 @@
 @import 'assets/scss/valuable';
 @import 'assets/scss/animation';
+@import 'assets/scss/responsive';
 
 #vesting {
   .box-vesting {
@@ -111,6 +112,38 @@
       align-items: center;
       img {
         max-width: 58%;
+      }
+    }
+  }
+  @include media('screen', '<laptop') {
+    .box-around {
+      margin-left: 12px;
+      margin-right: 12px;
+      width: calc(100% - 24px);
+      .item {
+        .label {
+          font-size: 12px;
+          span {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    .summary {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+    .box-sale {
+      flex-direction: column;
+      width: 100%;
+      padding-bottom: 20px;
+      .img,
+      .content {
+        margin-right: 12px;
+        margin-left: 12px;
+        width: calc(100% - 24px);
+        margin-bottom: 20px;
       }
     }
   }

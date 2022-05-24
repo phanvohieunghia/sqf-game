@@ -22,8 +22,10 @@ const Leaderboard = () => {
       </div>
       <div className="container">
         <div className="input">
-          <input type="text" placeholder="Egg basket ID" />
-          <img src={require('assets/img/search.png')} alt="error png" />
+          <div className="wrapper">
+            <input type="text" placeholder="Egg basket ID" />
+            <img src={require('assets/img/search.png')} alt="error png" />
+          </div>
         </div>
       </div>
       <div className="list-data container">

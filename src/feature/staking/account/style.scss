@@ -1,4 +1,5 @@
 @import 'assets/scss/valuable';
+@import 'assets/scss/responsive';
 
 #staking {
   .box-staking {
@@ -111,6 +112,27 @@
           > span {
             font-size: 18px;
           }
+        }
+      }
+    }
+  }
+  @include media('screen', '<laptop') {
+    .box-staking {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 0;
+      .item {
+        min-width: unset;
+        max-width: unset;
+        margin-right: 25px;
+        width: calc(100% - 50px);
+        .claim-button {
+          position: relative;
+
+          margin-left: auto;
+          margin-right: auto;
+          left: unset;
+          right: unset;
         }
       }
     }

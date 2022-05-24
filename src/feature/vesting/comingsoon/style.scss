@@ -1,3 +1,5 @@
+@import 'assets/scss/responsive';
+
 #vesting {
   .box {
     width: 1024px;
@@ -24,10 +26,25 @@
         font-size: 34px;
         padding-top: 46px;
         padding-bottom: 32px;
-        font-size: 700;
+        font-weight: 700;
       }
       p {
         font-size: 16px;
+      }
+    }
+  }
+  @include media('screen', '<laptop') {
+    .box {
+      flex-direction: column;
+      margin-left: 12px;
+      margin-right: 12px;
+      width: calc(100% - 24px);
+      .right {
+        padding-left: 0px;
+        h1 {
+          padding-top: 32px;
+          padding-bottom: 20px;
+        }
       }
     }
   }
