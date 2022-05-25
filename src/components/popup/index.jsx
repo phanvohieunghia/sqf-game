@@ -1,34 +1,33 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
 
 import './style.scss'
-import { showPopup } from 'selectors'
-import globalSlice from 'reducers/globalSlice'
 
 const Popup = ({ children, content }) => {
-  const dispath = useDispatch()
-  const selfRef = useRef(null)
-  const state = useSelector(showPopup)
-  function handlePopup(e) {
+  const [state, setState] = useState(false)
+  const handlePopup = (e) => {
+    console.log(e)
+    e.stopPropagation()
     e.preventDefault()
-    dispath(globalSlice.actions.showPopup(true))
+    setState(!state)
   }
-  useEffect(() => {})
+  function handleState() {
+    setState(!state)
+  }
   return (
-    <a id="popup" ref={selfRef} onClick={handlePopup}>
+    <div id="popup" onClick={handlePopup}>
       {children}
-      {state && <PopupContent content={content} />}
-    </a>
+      {state && <PopupContent content={content} onState={handleState} />}
+    </div>
   )
 }
-const PopupContent = ({ content = 'COMING SOON!' }) => {
-  const dispath = useDispatch()
+const PopupContent = ({ content = 'COMING SOON!', onState }) => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      dispath(globalSlice.actions.showPopup(false))
-    }, 1000)
-    return () => clearTimeout(timeoutId)
-  })
+      onState()
+      return () => clearTimeout(timeoutId)
+    }, 1900)
+    console.log(timeoutId)
+  }, [])
   return <div className="popup">{content}</div>
 }
 

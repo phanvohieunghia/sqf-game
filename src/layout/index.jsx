@@ -6,7 +6,6 @@ import Sidebar from 'components/sidebar'
 import SidebarMobile from 'components/sidebar-mobile'
 import Header from 'components/header'
 import Domdom from 'components/domdom'
-import Popup from 'components/popup'
 import MenuMobile from 'components/menu-mobile'
 
 const Layout = () => {
@@ -24,7 +23,6 @@ const Layout = () => {
         )}
         <Header />
         <Outlet />
-        <Popup />
       </main>
     </>
   )

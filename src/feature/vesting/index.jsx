@@ -8,23 +8,16 @@ const Vesting = () => {
   return (
     <div id="vesting">
       <div className="tab">
-        {/* <NavLink
-          to="/vesting/public-sale"
-          className={'item' + (pathname == '/vesting' ? ' active' : '')}
-        >
-          Egg Basbet
-        </NavLink> */}
-
-        <NavLink to="/vesting/private-sale" className="item">
+        <NavLink to="private-sale" className="item">
           Private sale
         </NavLink>
-        <NavLink to="/vesting/presale" className="item">
+        <NavLink to="presale" className="item">
           Pre-Sale
         </NavLink>
-        <NavLink to="/vesting/public-sale" className="item">
+        <NavLink to="public-sale" className="item">
           Public Sale
         </NavLink>
-        <NavLink to="/vesting/airdrop" className="item">
+        <NavLink to="airdrop" className="item">
           Airdrop
         </NavLink>
       </div>
