@@ -16,7 +16,8 @@ const MyAssets = () => {
           Not on market
         </NavLink>
         <NavLink to="on-market" className="item">
-          <Popup>On the market</Popup>
+          On the market
+          <Popup />
         </NavLink>
       </div>
       <Outlet />

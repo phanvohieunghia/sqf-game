@@ -2,6 +2,7 @@ import React from 'react'
 
 import './style.scss'
 import Icons from 'assets/icons'
+import Popup from 'components/popup'
 
 const Account = () => {
   return (
@@ -24,10 +25,16 @@ const Account = () => {
             </div>
           </div>
           <div className="button active">
-            <button>Stake</button>
+            <button>
+              Stake
+              <Popup />
+            </button>
           </div>
           <div className="button">
-            <button>Stake</button>
+            <button>
+              Stake
+              <Popup />
+            </button>
           </div>
         </div>
         <div className="wrapper">
@@ -51,12 +58,19 @@ const Account = () => {
       </div>
       <div className="box-staking">
         <div className="item left">
-          <h1>Claimable</h1>
-          <div className="coin">
-            <span className="green-color">0</span>MSP
-          </div>
-          <div className="claim-button">
-            <button>Claim</button>
+          <div className="wrapper-custom">
+            <div className="content">
+              <h1>Claimable</h1>
+              <div className="coin">
+                <span className="green-color">0</span>MSP
+              </div>
+            </div>
+            <div className="claim-button">
+              <button>
+                Claim
+                <Popup />
+              </button>
+            </div>
           </div>
         </div>
       </div>

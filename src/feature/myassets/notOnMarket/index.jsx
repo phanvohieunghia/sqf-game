@@ -20,7 +20,8 @@ const NotOnMaket = () => {
         </div>
         <div className="button">
           <button>
-            <Popup>Button</Popup>
+            <Popup />
+            Button
           </button>
         </div>
       </div>

@@ -47,10 +47,12 @@ const MarketPlace = () => {
         </div>
         <div className="tab">
           <a className="item">
-            <Popup>Egg Basbet</Popup>
+            Egg Basbet
+            <Popup />
           </a>
           <a className="item">
-            <Popup>Item</Popup>
+            Item
+            <Popup />
           </a>
         </div>
         <div className="filter">

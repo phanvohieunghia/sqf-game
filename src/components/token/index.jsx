@@ -1,3 +1,4 @@
+import Popup from 'components/popup'
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 
@@ -35,6 +36,7 @@ const Token = () => {
           Unlock <span className="yellow-color">100%</span> when claim
         </p>
         <div className="claim-button">
+          <Popup />
           <button>Claim</button>
         </div>
       </div>
