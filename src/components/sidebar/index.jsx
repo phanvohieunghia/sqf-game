@@ -5,6 +5,9 @@ import './style.scss'
 import Popup from 'components/popup'
 
 const Sidebar = () => {
+  function showClick() {
+    console.log('click egg baskets')
+  }
   return (
     <div className="sidebar">
       <div className="img">
@@ -13,13 +16,13 @@ const Sidebar = () => {
       <NavLink to="/">
         <Popup>Dashboard</Popup>
       </NavLink>
-      <NavLink to="/egg-baskets">
+      <NavLink to="/egg-baskets" onClick={showClick}>
         <Popup>Egg baskets</Popup>
       </NavLink>
-      <NavLink to="/my-assets">My Assets</NavLink>
-      <NavLink to="/marketplace">Marketplace</NavLink>
-      <NavLink to="/staking">Staking</NavLink>
-      <NavLink to="/vesting">Vesting</NavLink>
+      <NavLink to="my-assets">My Assets</NavLink>
+      <NavLink to="marketplace">Marketplace</NavLink>
+      <NavLink to="staking">Staking</NavLink>
+      <NavLink to="vesting">Vesting</NavLink>
     </div>
   )
 }

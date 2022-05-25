@@ -3,6 +3,10 @@ import { Route, Routes } from 'react-router-dom'
 
 import Layout from 'layout'
 import Dashboard from 'feature/dashborad'
+
+import MyAssetsPage from 'feature/myassets'
+import NotOnMarketMyAssets from 'feature/myassets/notOnMarket'
+
 import MarketplacePage from 'feature/marketplace'
 import DetailPage from 'feature/marketplace/detail'
 
@@ -26,9 +30,12 @@ const Router = () => {
         <Route index element={<Dashboard />} />
         <Route path="marketplace" element={<MarketplacePage />} />
         <Route path="marketplace/:itemId" element={<DetailPage />} />
-
         <Route path="egg-baskets" element={<MarketplacePage />} />
-        <Route path="my-assets" element={<MarketplacePage />} />
+        <Route path="my-assets" element={<MyAssetsPage />}>
+          <Route index element={<NotOnMarketMyAssets />} />
+          <Route path="not-on-market" element={<NotOnMarketMyAssets />} />
+        </Route>
+
         <Route path="staking" element={<StakingPage />}>
           <Route index element={<AcountStaking />} />
           <Route path="account" element={<AcountStaking />} />
