@@ -2,14 +2,21 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 
 import './style.scss'
+import Popup from 'components/popup'
 
 const Detail = () => {
   let { itemId } = useParams()
   return (
     <div id="detail">
       <div className="tab">
-        <div className="item">Egg basket</div>
-        <div className="item">Item</div>
+        <div className="item">
+          Egg basket
+          <Popup />
+        </div>
+        <div className="item">
+          Item
+          <Popup />
+        </div>
       </div>
       <div className="box-detail">
         <div className="container">
@@ -25,7 +32,10 @@ const Detail = () => {
               <span>490 MSP</span>
             </div>
             <div className="button">
-              <button>Buy</button>
+              <button>
+                Buy
+                <Popup />
+              </button>
             </div>
           </div>
           <div className="right">

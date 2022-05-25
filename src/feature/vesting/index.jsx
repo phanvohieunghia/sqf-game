@@ -8,7 +8,10 @@ const Vesting = () => {
   return (
     <div id="vesting">
       <div className="tab">
-        <NavLink to="private-sale" className="item">
+        <NavLink
+          to="private-sale"
+          className={'item' + (pathname === '/vesting' ? ' active' : '')}
+        >
           Private sale
         </NavLink>
         <NavLink to="presale" className="item">

@@ -1,3 +1,4 @@
+import Popup from 'components/popup'
 import React from 'react'
 
 import './style.scss'
@@ -15,7 +16,10 @@ const Header = () => {
           <span>0</span>
         </div>
       </div>
-      <div className="btn">Connect wallet</div>
+      <div className="button">
+        <Popup />
+        Connect wallet
+      </div>
     </header>
   )
 }
