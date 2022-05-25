@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import './style.scss'
 
-const Popup = ({ children, content }) => {
+const Popup = ({ content }) => {
+  const mainRef = useRef(null)
   const [state, setState] = useState(false)
   const handlePopup = (e) => {
     console.log(e)
@@ -13,9 +14,11 @@ const Popup = ({ children, content }) => {
   function handleState() {
     setState(!state)
   }
+  useEffect(() => {
+    mainRef.current.parentElement.style.position = 'relative'
+  }, [])
   return (
-    <div id="popup" onClick={handlePopup}>
-      {children}
+    <div id="popup" onClick={handlePopup} ref={mainRef}>
       {state && <PopupContent content={content} onState={handleState} />}
     </div>
   )

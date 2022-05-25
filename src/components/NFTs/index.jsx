@@ -1,3 +1,4 @@
+import Popup from 'components/popup'
 import React from 'react'
 
 import './style.scss'
@@ -14,7 +15,10 @@ const NFTs = () => {
           Amount of MSP can claim: <span className="green-color">0</span>
         </p>
         <div className="claim-button">
-          <button>Claim</button>
+          <button>
+            Claim
+            <Popup />
+          </button>
         </div>
       </div>
     </div>

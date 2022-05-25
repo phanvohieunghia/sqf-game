@@ -14,10 +14,12 @@ const Sidebar = () => {
         <img src={require('assets/img/logo.png')} alt="error png" />
       </div>
       <NavLink to="/">
-        <Popup>Dashboard</Popup>
+        Dashboard
+        <Popup />
       </NavLink>
       <NavLink to="/egg-baskets" onClick={showClick}>
-        <Popup>Egg baskets</Popup>
+        Egg baskets
+        <Popup />
       </NavLink>
       <NavLink to="my-assets">My Assets</NavLink>
       <NavLink to="marketplace">Marketplace</NavLink>

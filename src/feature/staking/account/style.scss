@@ -57,9 +57,9 @@
       .button.active {
         background: url('/assets/img/button4-active.png') no-repeat center /
           100% 100%;
-        opacity: 0.5;
+        opacity: 1;
       }
-      > .coin {
+      .coin {
         margin: 20px 0;
         color: $blue-color;
         span {
@@ -69,12 +69,12 @@
       }
     }
     .left {
-      position: relative;
+      .wrapper-custom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
       .claim-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 20px;
         width: 110px;
         height: 36px;
         background: url('/assets/img/button5.png') no-repeat center / 100% 100%;
@@ -126,13 +126,11 @@
         max-width: unset;
         margin-right: 25px;
         width: calc(100% - 50px);
-        .claim-button {
-          position: relative;
-
-          margin-left: auto;
-          margin-right: auto;
-          left: unset;
-          right: unset;
+        .wrapper-custom {
+          flex-direction: column;
+          .content {
+            align-self: flex-start;
+          }
         }
       }
     }
