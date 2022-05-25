@@ -4,7 +4,7 @@ import './style.scss'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleMenu } from 'selectors'
 import { NavLink } from 'react-router-dom'
-import globalSlice from 'reducers/global'
+import globalSlice from 'reducers/globalSlice'
 
 const SidebarMobile = () => {
   const dispatch = useDispatch()

@@ -104,5 +104,17 @@
         width: 140px;
       }
     }
+    .box-detail {
+      .container {
+        flex-direction: column;
+        .right {
+          margin-left: 16px;
+          margin-right: 16px;
+          .content {
+            margin-bottom: 40px;
+          }
+        }
+      }
+    }
   }
 }

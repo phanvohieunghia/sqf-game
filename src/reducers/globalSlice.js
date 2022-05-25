@@ -3,12 +3,16 @@ import { createSlice } from '@reduxjs/toolkit'
 const globalSlide = createSlice({
   name: 'global',
   initialState: {
-    toggle: false,
+    menuMobile: false,
+    popup: false,
   },
   reducers: {
     toggleMenu: (state, action) => {
-      state.toggle = action.payload
+      state.menuMobile = action.payload
     },
+    showPopup: (state, action) => {
+      state.popup = action.payload
+    }
   },
 })
 export default globalSlide

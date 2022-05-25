@@ -5,7 +5,7 @@ import './style.scss'
 import Domdom from 'components/domdom'
 import Pagination from 'components/pagination'
 import Icons from 'assets/icons'
-// import ItemList from 'assets/data/items.json'
+import Popup from 'components/popup'
 
 const MarketPlace = () => {
   return (
@@ -46,8 +46,12 @@ const MarketPlace = () => {
           </div>
         </div>
         <div className="tab">
-          <a className="item">Egg Basbet</a>
-          <a className="item">Item</a>
+          <a className="item">
+            <Popup>Egg Basbet</Popup>
+          </a>
+          <a className="item">
+            <Popup>Item</Popup>
+          </a>
         </div>
         <div className="filter">
           <label>Filter</label>

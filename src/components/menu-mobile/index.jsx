@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './style.scss'
-import globalSlice from 'reducers/global'
+import globalSlice from 'reducers/globalSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleMenu } from 'selectors'
 
