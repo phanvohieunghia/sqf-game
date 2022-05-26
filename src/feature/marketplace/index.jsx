@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import './style.scss'
-import Domdom from 'components/domdom'
 import Pagination from 'components/pagination'
 import Icons from 'assets/icons'
 import Popup from 'components/popup'
@@ -10,7 +9,6 @@ import Popup from 'components/popup'
 const MarketPlace = () => {
   return (
     <div id="marketplace">
-      <Domdom />
       <div className="main">
         <div className="summary">
           <div className="d-flex container justify-content-center">

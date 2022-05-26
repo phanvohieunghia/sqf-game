@@ -1,6 +1,8 @@
 @import 'assets/scss/responsive';
 
 #myassets {
+  position: relative;
+  z-index: 0;
   .tab {
     display: flex;
     width: 920px;

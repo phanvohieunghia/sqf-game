@@ -2,62 +2,7 @@
 @import 'assets/scss/responsive';
 
 #myassets {
-  .not-on-market-box {
-    .transfer {
-      display: flex;
-      margin-top: 40px;
-      margin-left: 16px;
-      margin-right: 16px;
-      padding: 16px;
-      border-radius: 10px;
-      background-color: #142950;
-      color: $white-color;
-      .item {
-        flex-basis: 30%;
-        > label {
-          width: 100%;
-          margin-bottom: 10px;
-          color: $white-color;
-          font-size: 14px;
-        }
-        input {
-          width: 100%;
-          line-height: 34px;
-          padding: 0 2px 0 10px;
-          border: none;
-          background: #4c6fa7;
-          color: $white-color;
-          border-radius: 10px;
-          &::placeholder {
-            font-size: 14px;
-            color: #ac9fa9;
-          }
-        }
-      }
-      .item:first-child {
-        flex-basis: 60%;
-        padding-right: 10px;
-      }
-      .button {
-        position: relative;
-        align-self: flex-end;
-        background: url('/assets/img/button5.png') no-repeat center / 100% 100%;
-        flex-basis: 10%;
-        margin-left: 8px;
-        height: 34px;
-        width: 100%;
-        button {
-          height: 100%;
-          width: 100%;
-          color: $white-color;
-          background-color: transparent;
-          border: none;
-          outline: none;
-          font-size: 14px;
-          text-shadow: 1px 1px 2px #000;
-        }
-      }
-    }
+  .on-market-box {
     .list-item {
       .container .row .item {
         padding-left: 0;
@@ -118,28 +63,6 @@
               text-shadow: 1px 1px 2px #000;
             }
           }
-        }
-      }
-    }
-  }
-  @include media('screen', '<laptop') {
-    .not-on-market-box {
-      flex-direction: column;
-      margin-left: 12px;
-      margin-right: 12px;
-      width: calc(100% - 24px);
-      .item {
-        margin-bottom: 16px;
-        flex-basis: 30%;
-      }
-      .button {
-        width: 110px;
-        margin-left: auto;
-        margin-right: auto;
-        max-height: 46px;
-        flex-basis: 5%;
-        button {
-          height: 46px;
         }
       }
     }

@@ -18,6 +18,12 @@ const Detail = () => {
           <Popup />
         </div>
       </div>
+      <div className="title-box">
+        <div className="container">
+          <h3>Item Name</h3>
+          <div className="level">Level: 1</div>
+        </div>
+      </div>
       <div className="box-detail">
         <div className="container">
           <div className="left">

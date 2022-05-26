@@ -6,6 +6,7 @@ import Dashboard from 'feature/dashborad'
 
 import MyAssetsPage from 'feature/myassets'
 import NotOnMarketMyAssets from 'feature/myassets/notOnMarket'
+import OnMarketMyAssets from 'feature/myassets/onMarket'
 
 import MarketplacePage from 'feature/marketplace'
 import DetailPage from 'feature/marketplace/detail'
@@ -34,6 +35,7 @@ const Router = () => {
         <Route path="my-assets" element={<MyAssetsPage />}>
           <Route index element={<NotOnMarketMyAssets />} />
           <Route path="not-on-market" element={<NotOnMarketMyAssets />} />
+          <Route path="on-market" element={<OnMarketMyAssets />} />
         </Route>
 
         <Route path="staking" element={<StakingPage />}>

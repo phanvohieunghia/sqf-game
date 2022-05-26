@@ -2,7 +2,6 @@ import React from 'react'
 import { Outlet, NavLink, useLocation } from 'react-router-dom'
 
 import './style.scss'
-import Popup from 'components/popup'
 
 const MyAssets = () => {
   const { pathname } = useLocation()
@@ -17,7 +16,6 @@ const MyAssets = () => {
         </NavLink>
         <NavLink to="on-market" className="item">
           On the market
-          <Popup />
         </NavLink>
       </div>
       <Outlet />
