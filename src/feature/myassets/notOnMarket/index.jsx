@@ -55,13 +55,13 @@ const Item = ({ id }) => {
         <div className="img">
           <img src={require('assets/img/item.png')} alt="error png" />
         </div>
-        <div className="claim-button">
+        <div className="button">
           <button>
             Buy
             <Popup />
           </button>
         </div>
-        <div className="claim-button">
+        <div className="button">
           <button>
             Transfer
             <Popup />

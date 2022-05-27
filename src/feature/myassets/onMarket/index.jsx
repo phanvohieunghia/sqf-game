@@ -35,7 +35,7 @@ const Item = ({ id }) => {
         <div className="img">
           <img src={require('assets/img/item.png')} alt="error png" />
         </div>
-        <div className="claim-button">
+        <div className="cancel-button">
           <button>
             Cancel
             <Popup />
