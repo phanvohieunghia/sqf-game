@@ -23,8 +23,8 @@ import PublicSale from 'feature/vesting/public-sale'
 import Airdrop from 'feature/vesting/airdrop'
 import Presale from 'feature/vesting/presale'
 import PrivateSale from 'feature/vesting/private-sale'
-import PublicSaleOld from 'feature/vesting/publicsale-old'
-import ComingSoonVesting from 'feature/vesting/comingsoon'
+// import PublicSaleOld from 'feature/vesting/publicsale-old'
+// import ComingSoonVesting from 'feature/vesting/comingsoon'
 
 const Router = () => {
   return (

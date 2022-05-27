@@ -1,71 +1,139 @@
 [
   {
-    "id": 0
+    "id": 0,
+    "type": "weapon",
+    "name": "name",
+    "introduction": "Phoenix Howl Over Eight Desolations. It once wiped out a large number of dark legions in the Ancient War",
+    "weapon_pow": "weapon pow",
+    "attack_stone": "No Scoket",
+    "health_stone": "No Scoket",
+    "defense_stone": "No Scoket",
+    "infinity_stone": "No Scoket",
+    "attack": 120,
+    "area": 100
   },
   {
-    "id": 1
+    "id": 1,
+    "type": "neckleace",
+    "name": "name",
+    "introduction": "",
+    "attack_stone": "No Scoket",
+    "health_stone": "No Scoket",
+    "defense_stone": "No Scoket",
+    "infinity_stone": "No Scoket",
+    "set": "flame",
+    "crit_resist": 180
   },
   {
-    "id": 2
+    "id": 2,
+    "type": "ring",
+    "name": "name",
+    "introduction": "",
+    "attack_stone": "No Scoket",
+    "health_stone": "No Scoket",
+    "defense_stone": "No Scoket",
+    "infinity_stone": "No Scoket",
+    "set": "flame",
+    "critical": 180
   },
   {
-    "id": 3
+    "id": 3,
+    "type": "barcer",
+    "name": "name",
+    "introduction": "",
+    "attack_stone": "No Scoket",
+    "health_stone": "No Scoket",
+    "defense_stone": "No Scoket",
+    "infinity_stone": "No Scoket",
+    "set": "flame",
+    "defense": 180
   },
   {
-    "id": 4
+    "id": 4,
+    "type": "badge",
+    "name": "name",
+    "introduction": "",
+    "attack_stone": "No Scoket",
+    "health_stone": "No Scoket",
+    "defense_stone": "No Scoket",
+    "infinity_stone": "No Scoket",
+    "set": "flame",
+    "health": 180
   },
   {
-    "id": 5
+    "id": 5,
+    "type": "earrings",
+    "name": "name",
+    "introduction": "",
+    "attack_stone": "No Scoket",
+    "health_stone": "No Scoket",
+    "defense_stone": "No Scoket",
+    "infinity_stone": "No Scoket",
+    "set": "flame",
+    "armor_break": 180
   },
   {
-    "id": 6
+    "id": 6,
+    "type": "head",
+    "name": "name",
+    "introduction": "",
+    "health": 0,
+    "attack": 10,
+    "defense": 2,
+    "speed": 3,
+    "luck": 4
   },
   {
-    "id": 7
+    "id": 7,
+    "type": "face",
+    "name": "name",
+    "introduction": "",
+    "health": 100,
+    "attack": 1,
+    "defense": 2,
+    "speed": 3,
+    "luck": 4
   },
   {
-    "id": 8
+    "id": 8,
+    "type": "outfit",
+    "name": "name",
+    "introduction": "",
+    "health": 100,
+    "attack": 1,
+    "defense": 2,
+    "speed": 3,
+    "luck": 4
   },
   {
-    "id": 9
+    "id": 9,
+    "type": "wing",
+    "name": "name",
+    "introduction": "",
+    "health": 100,
+    "attack": 1,
+    "defense": 2,
+    "speed": 3,
+    "luck": 4
   },
   {
-    "id": 10
+    "id": 10,
+    "type": "pet",
+    "name": "name",
+    "introduction": "",
+    "health": 100,
+    "attack": 1,
+    "defense": 2,
+    "pet_potential": ""
   },
   {
-    "id": 11
-  },
-  {
-    "id": 12
-  },
-  {
-    "id": 13
-  },
-  {
-    "id": 14
-  },
-  {
-    "id": 15
-  },
-  {
-    "id": 16
-  },
-  {
-    "id": 17
-  },
-  {
-    "id": 18
-  },
-  {
-    "id": 19
-  },
-  {
-    "id": 20
-  },
-  {
-    "id": 21
-  },
-  {
-    "id": 22
+    "id": 11,
+    "type": "stone",
+    "name": "name",
+    "introduction": "",
+    "defense": 1,
+    "armor": 1,
+    "attack": 1,
+    "health": 100
   }
 ]
