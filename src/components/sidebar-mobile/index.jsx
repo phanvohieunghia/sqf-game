@@ -19,7 +19,6 @@ const SidebarMobile = () => {
         <div className="sidebar-mobile">
           <div className="list">
             <NavLink onClick={handleItem} className="item" to="/">
-              <Popup />
               Dashboard
             </NavLink>
             <NavLink onClick={handleItem} className="item" to="/egg-baskets">

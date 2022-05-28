@@ -1,0 +1,63 @@
+@import 'assets/scss/valuable';
+
+#dashboard {
+  color: $white-color;
+  margin-bottom: 40px;
+  h3 {
+    font-weight: 700;
+    font-size: 26px;
+    margin: 20px 0 8px;
+  }
+  .content {
+    background-color: rgba(26, 56, 101, 0.22);
+    border-radius: 5px;
+    border: 1px solid rgba(108, 165, 214, 0.8);
+    padding: 8px 12px;
+    .item {
+      margin-bottom: 16px;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      label {
+        width: 200px;
+        color: #bbbdbf;
+      }
+      span {
+        margin-left: 8px;
+      }
+      .unit {
+        flex-basis: 30px;
+      }
+    }
+    .item2 {
+      margin-bottom: 16px;
+      font-size: 18px;
+      background-color: #142950;
+      border-radius: 10px;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 8px 20px;
+      text-align: center;
+      label {
+        color: #bbbdbf;
+      }
+      span {
+        margin-left: 20px;
+        svg {
+          fill: $white-color;
+        }
+      }
+    }
+  }
+  .content.overview {
+    display: flex;
+    justify-content: space-around;
+    .item {
+      label {
+        color: $white-color;
+      }
+      margin-top: 16px;
+    }
+  }
+}

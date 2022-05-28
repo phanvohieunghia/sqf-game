@@ -38,9 +38,13 @@ function renderItemList() {
   for (var i = 0; i < 2; i++) {
     const itemRow = []
     for (var j = 0; j < 6; j++) {
-      itemRow.push(<Item id={i * 6 + j} />)
+      itemRow.push(<Item id={i * 6 + j} key={i * 6 + j} />)
     }
-    items.push(<div className="row">{itemRow}</div>)
+    items.push(
+      <div className="row" key={i}>
+        {itemRow}
+      </div>,
+    )
   }
   return items
 }

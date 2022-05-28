@@ -6,7 +6,7 @@ import Popup from 'components/popup'
 import Items from 'assets/data/items.json'
 // import SetItems from 'assets/data/set-items.json'
 
-const Detail = (prop) => {
+const Detail = () => {
   const { itemId } = useParams()
   const currentItem = Items.find((item) => item.id === Number(itemId))
   return (
