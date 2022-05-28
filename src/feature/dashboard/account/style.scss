@@ -34,16 +34,19 @@
       font-size: 18px;
       background-color: #142950;
       border-radius: 10px;
-      width: 60%;
+      width: 50%;
       margin-left: auto;
       margin-right: auto;
       padding: 8px 20px;
       text-align: center;
+      cursor: pointer;
+      user-select: none;
       label {
         color: #bbbdbf;
+        cursor: pointer;
       }
       span {
-        margin-left: 20px;
+        margin-left: 10px;
         svg {
           fill: $white-color;
         }

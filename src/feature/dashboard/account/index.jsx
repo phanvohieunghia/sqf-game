@@ -3,7 +3,21 @@ import React from 'react'
 import './style.scss'
 import Icons from 'assets/icons'
 
-const Dashboard = () => {
+const Account = () => {
+  const valuable = {
+    address: '0x307e415778f2aa486e20387a8ecddf69c68783fe',
+    reference_link: 'https://sqf-gunbow.vercel.app',
+  }
+  function handleClipBoard(type) {
+    switch (type) {
+      case 'address':
+        navigator.clipboard.writeText(valuable.address)
+        break
+      case 'reference_link':
+        navigator.clipboard.writeText(valuable.reference_link)
+        break
+    }
+  }
   return (
     <div className="account">
       <div className="container">
@@ -73,16 +87,19 @@ const Dashboard = () => {
             <span>0</span>
             <span className="unit"> %</span>
           </div>
-          <div className="item2">
+          <div className="item2" onClick={() => handleClipBoard('address')}>
             <label>Address:</label>
-            <span>0x307e415778f2aa486e20387a8ecddf69c68783fe</span>
+            <span>{valuable.address}</span>
             <span>
               <Icons.Copy height={'20'} />
             </span>
           </div>
-          <div className="item2">
+          <div
+            className="item2"
+            onClick={() => handleClipBoard('reference_link')}
+          >
             <label>Reference Link:</label>
-            <span>https://sqf-gunbow.vercel.app</span>
+            <span>{valuable.reference_link}</span>
             <span>
               <Icons.Copy height={'20'} />
             </span>
@@ -93,4 +110,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Account
