@@ -6,7 +6,7 @@ import './style.scss'
 
 const Token = () => {
   const { pathname } = useLocation()
-  const isAirdrop = pathname == '/vesting/airdrop'
+  const isAirdrop = pathname === '/vesting/airdrop'
   console.log(isAirdrop)
 
   return (

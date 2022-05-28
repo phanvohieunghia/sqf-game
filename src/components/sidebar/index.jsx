@@ -1,23 +1,24 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 import './style.scss'
 import Popup from 'components/popup'
 
 const Sidebar = () => {
-  function showClick() {
-    console.log('click egg baskets')
-  }
+  const { pathname } = useLocation()
+  console.log(pathname)
   return (
     <div className="sidebar">
       <div className="img">
         <img src={require('assets/img/logo.png')} alt="error png" />
       </div>
-      <NavLink to="/">
+      <NavLink
+        to="/"
+        className={'item' + (pathname === '/account' ? ' active' : '')}
+      >
         Dashboard
-        <Popup />
       </NavLink>
-      <NavLink to="/egg-baskets" onClick={showClick}>
+      <NavLink to="/egg-baskets">
         Egg baskets
         <Popup />
       </NavLink>

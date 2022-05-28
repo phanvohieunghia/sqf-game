@@ -1,6 +1,8 @@
 @import 'assets/scss/responsive';
 
 header {
+  position: relative;
+  z-index: 0;
   margin: 24px;
   background-color: rgba(244, 205, 244, 0.2);
   border-radius: 10px;

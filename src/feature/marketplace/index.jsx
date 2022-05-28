@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import './style.scss'
-import Domdom from 'components/domdom'
 import Pagination from 'components/pagination'
 import Icons from 'assets/icons'
 import Popup from 'components/popup'
@@ -10,13 +9,12 @@ import Popup from 'components/popup'
 const MarketPlace = () => {
   return (
     <div id="marketplace">
-      <Domdom />
       <div className="main">
         <div className="summary">
           <div className="d-flex container justify-content-center">
             <div className="item">
               <span className="img">
-                <img src={require('assets/img/item.png')} />
+                <img src={require('assets/img/item.png')} alt="error png" />
               </span>
               <span className="infor">
                 <h4>Last price</h4>
@@ -25,7 +23,7 @@ const MarketPlace = () => {
             </div>
             <div className="item">
               <span className="img">
-                <img src={require('assets/img/item.png')} />
+                <img src={require('assets/img/item.png')} alt="error png" />
               </span>
               <span className="infor">
                 <h4>Total volume</h4>
@@ -34,7 +32,7 @@ const MarketPlace = () => {
             </div>
             <div className="item">
               <span className="img">
-                <img src={require('assets/img/item.png')} />
+                <img src={require('assets/img/item.png')} alt="error png" />
               </span>
               <span className="infor">
                 <h4>MSP price</h4>
@@ -46,14 +44,14 @@ const MarketPlace = () => {
           </div>
         </div>
         <div className="tab">
-          <a className="item">
+          <div className="item">
             Egg Basbet
             <Popup />
-          </a>
-          <a className="item">
+          </div>
+          <div className="item">
             Item
             <Popup />
-          </a>
+          </div>
         </div>
         <div className="filter">
           <label>Filter</label>
@@ -82,9 +80,13 @@ function renderItemList() {
   for (var i = 0; i < 4; i++) {
     const itemRow = []
     for (var j = 0; j < 6; j++) {
-      itemRow.push(<Item id={i * 6 + j} />)
+      itemRow.push(<Item id={i * 6 + j} key={i * 6 + j} />)
     }
-    items.push(<div className="row">{itemRow}</div>)
+    items.push(
+      <div className="row" key={i}>
+        {itemRow}
+      </div>,
+    )
   }
   return items
 }

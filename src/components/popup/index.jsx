@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState, memo } from 'react'
 
 import './style.scss'
 
@@ -11,9 +11,9 @@ const Popup = ({ content }) => {
     e.preventDefault()
     setState(!state)
   }
-  function handleState() {
+  const handleState = useCallback(() => {
     setState(!state)
-  }
+  }, [state])
   useEffect(() => {
     mainRef.current.parentElement.style.position = 'relative'
   }, [])
@@ -23,15 +23,13 @@ const Popup = ({ content }) => {
     </div>
   )
 }
-const PopupContent = ({ content = 'COMING SOON!', onState }) => {
+const PopupContent = memo(({ content = 'COMING SOON!', onState }) => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       onState()
       return () => clearTimeout(timeoutId)
     }, 1900)
-    console.log(timeoutId)
-  }, [])
+  }, [onState])
   return <div className="popup">{content}</div>
-}
-
+})
 export default Popup

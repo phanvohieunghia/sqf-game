@@ -1,10 +1,11 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 
 import './style.scss'
-import { useSelector, useDispatch } from 'react-redux'
 import { toggleMenu } from 'selectors'
-import { NavLink } from 'react-router-dom'
 import globalSlice from 'reducers/globalSlice'
+import Popup from 'components/popup'
 
 const SidebarMobile = () => {
   const dispatch = useDispatch()
@@ -21,6 +22,7 @@ const SidebarMobile = () => {
               Dashboard
             </NavLink>
             <NavLink onClick={handleItem} className="item" to="/egg-baskets">
+              <Popup />
               Egg baskets
             </NavLink>
             <NavLink onClick={handleItem} className="item" to="/my-assets">

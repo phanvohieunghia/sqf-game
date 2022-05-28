@@ -5,7 +5,7 @@ import './style.scss'
 import Sidebar from 'components/sidebar'
 import SidebarMobile from 'components/sidebar-mobile'
 import Header from 'components/header'
-import Domdom from 'components/domdom'
+import Firefly from 'components/firefly'
 import MenuMobile from 'components/menu-mobile'
 
 const Layout = () => {
@@ -15,7 +15,7 @@ const Layout = () => {
       {window.innerWidth < 1024 && <SidebarMobile />}
       {window.innerWidth < 1024 && <MenuMobile />}
       <main>
-        {/* <Domdom /> */}
+        <Firefly />
         {window.innerWidth < 1024 && (
           <div className="logo">
             <img src={require('assets/img/logo.png')} alt="error png" />
