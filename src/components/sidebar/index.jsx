@@ -6,7 +6,6 @@ import Popup from 'components/popup'
 
 const Sidebar = () => {
   const { pathname } = useLocation()
-  console.log(pathname)
   return (
     <div className="sidebar">
       <div className="img">

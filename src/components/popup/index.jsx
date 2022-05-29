@@ -6,7 +6,6 @@ const Popup = ({ content }) => {
   const mainRef = useRef(null)
   const [state, setState] = useState(false)
   const handlePopup = (e) => {
-    console.log(e)
     e.stopPropagation()
     e.preventDefault()
     setState(!state)

@@ -134,7 +134,7 @@
         .wrapper {
           display: block;
           background-color: rgba(131, 181, 255, 0.21);
-          margin: 20px 10px 0;
+          margin: 12px 6px 0;
           border-radius: 10px;
           overflow: hidden;
           transition: box-shadow 0.4s ease-in-out;
@@ -161,11 +161,22 @@
               font-size: 17px;
             }
           }
+          .name {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            font-size: 18px;
+            font-weight: 700;
+            color: $white-color;
+            padding: 8px 12px;
+            line-height: 1.7;
+          }
           > .img {
             text-align: center;
             > img {
               transition: transform 0.4s ease-in-out;
-              height: 135px;
+              height: 100px;
             }
           }
           .information {
@@ -174,6 +185,7 @@
             .left,
             .right {
               flex-basis: 40%;
+              text-transform: capitalize;
               .info-item {
                 font-size: 13px;
                 margin-bottom: 10px;
@@ -200,6 +212,26 @@
               vertical-align: middle;
               color: $white-color;
               font-size: 16px;
+            }
+          }
+          .button {
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            width: 110px;
+            height: 36px;
+            background: url('/assets/img/button5.png') no-repeat center / 100%
+              100%;
+            button {
+              height: 100%;
+              width: 100%;
+              color: #fff;
+              background-color: transparent;
+              border: none;
+              outline: none;
+              font-size: 14px;
+              text-shadow: 1px 1px 2px #000;
             }
           }
         }

@@ -61,7 +61,7 @@ const Item = ({ id }) => {
         </div>
         <div className="button">
           <button>
-            Buy
+            Sell
             <Popup />
           </button>
         </div>

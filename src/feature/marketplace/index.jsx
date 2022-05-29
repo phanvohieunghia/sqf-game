@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 import './style.scss'
 import Pagination from 'components/pagination'
 import Icons from 'assets/icons'
 import Popup from 'components/popup'
+import Items from 'assets/data/items.json'
 
 const MarketPlace = () => {
   return (
@@ -68,19 +69,23 @@ const MarketPlace = () => {
           </div>
         </div>
         <div className="list-item">
-          <div className="container">{renderItemList()}</div>
+          <div className="container">
+            <RenderItemList />
+          </div>
         </div>
       </div>
       <Pagination />
     </div>
   )
 }
-function renderItemList() {
+function RenderItemListOld() {
   const items = []
   for (var i = 0; i < 4; i++) {
     const itemRow = []
     for (var j = 0; j < 6; j++) {
-      itemRow.push(<Item id={i * 6 + j} key={i * 6 + j} />)
+      itemRow.push(
+        <Item id={i * 6 + j} key={i * 6 + j} infor={Items[i * 6 + j]} />,
+      )
     }
     items.push(
       <div className="row" key={i}>
@@ -90,27 +95,59 @@ function renderItemList() {
   }
   return items
 }
-const Item = (props) => {
-  const { id } = props
+function RenderItemList() {
+  const refObj = useRef({
+    weapon: 'weapon',
+    head: 'outfit',
+    face: 'outfit',
+    clothes: 'outfit',
+    wing: 'outfit',
+    outfit: 'outfit',
+    necklace: 'accessories',
+    ring: 'accessories',
+    bracer: 'accessories',
+    treasure: 'accessories',
+    badge: 'accessories',
+    earrings: 'accessories',
+    stone: 'materiral',
+    forge: 'materiral',
+    holy_light: 'materiral',
+    mounts: 'pet',
+    assistant: 'pet',
+  })
   return (
-    <div className="item col-6 col-sm-2" key={id}>
-      <Link className="wrapper" to={'/marketplace/' + id}>
+    <div className="row">
+      {Items.map((item) => {
+        return <Item infor={item} type={refObj.current[item.type]} />
+      })}
+    </div>
+  )
+}
+const Item = (props) => {
+  const { infor, type } = props
+  return (
+    <div className="item col-6 col-sm-2" key={infor.id}>
+      <Link className="wrapper" to={'/marketplace/' + infor.id}>
         <div className="title">
           <img src={require('assets/img/title.png')} alt="error png" />
-          <span>ID: 3165</span>
+          <span>ID: {infor.id}</span>
         </div>
         <div className="img">
-          <img src={require('assets/img/item.png')} alt="error png" />
+          <img
+            src={require(`assets/img/items/${infor.path}`)}
+            alt="error png"
+          />
         </div>
+        <div className="name">{infor.name}</div>
         <div className="information">
           <div className="left">
             <div className="info-item">
               <label>Rarity: </label>
-              <div>Normal</div>
+              <div>{infor.rarity}</div>
             </div>
             <div className="info-item">
               <label>Type: </label>
-              <div>Outfit</div>
+              <div>{infor.type}</div>
             </div>
           </div>
           <div className="right">
@@ -118,10 +155,12 @@ const Item = (props) => {
               <label>Date: </label>
               <div>29/5/2022</div>
             </div>
-            <div className="info-item">
-              <label>Object: </label>
-              <div>Head</div>
-            </div>
+            {infor.type !== 'weapon' && (
+              <div className="info-item">
+                <label>Object: </label>
+                <div>{type}</div>
+              </div>
+            )}
           </div>
         </div>
         <div className="price">
@@ -129,6 +168,9 @@ const Item = (props) => {
             <img src={require('assets/img/coin.png')} alt="error png" />
           </span>
           <span className="coin">380 SQF</span>
+        </div>
+        <div className="button">
+          <button>Buy</button>
         </div>
       </Link>
     </div>
