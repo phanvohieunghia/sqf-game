@@ -1,11 +1,13 @@
-import React, { useRef } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import React, { useRef, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
 import './style.scss'
 import Pagination from 'components/pagination'
 import Icons from 'assets/icons'
-import Popup from 'components/popup'
 import Items from 'assets/data/items.json'
+import detailPopupSlice from 'components/popup/detail/slice'
+import Popup from 'components/popup/comingsoon'
 
 const MarketPlace = () => {
   return (
@@ -15,16 +17,7 @@ const MarketPlace = () => {
           <div className="d-flex container justify-content-center">
             <div className="item">
               <span className="img">
-                <img src={require('assets/img/item.png')} alt="error png" />
-              </span>
-              <span className="infor">
-                <h4>Last price</h4>
-                <span className="greenColor">384</span>
-              </span>
-            </div>
-            <div className="item">
-              <span className="img">
-                <img src={require('assets/img/item.png')} alt="error png" />
+                <img src={require('assets/img/summary.png')} alt="error png" />
               </span>
               <span className="infor">
                 <h4>Total volume</h4>
@@ -33,7 +26,7 @@ const MarketPlace = () => {
             </div>
             <div className="item">
               <span className="img">
-                <img src={require('assets/img/item.png')} alt="error png" />
+                <img src={require('assets/img/summary.png')} alt="error png" />
               </span>
               <span className="infor">
                 <h4>MSP price</h4>
@@ -42,16 +35,6 @@ const MarketPlace = () => {
                 </span>
               </span>
             </div>
-          </div>
-        </div>
-        <div className="tab">
-          <div className="item">
-            Egg Basbet
-            <Popup />
-          </div>
-          <div className="item">
-            Item
-            <Popup />
           </div>
         </div>
         <div className="filter">
@@ -77,23 +60,6 @@ const MarketPlace = () => {
       <Pagination />
     </div>
   )
-}
-function RenderItemListOld() {
-  const items = []
-  for (var i = 0; i < 4; i++) {
-    const itemRow = []
-    for (var j = 0; j < 6; j++) {
-      itemRow.push(
-        <Item id={i * 6 + j} key={i * 6 + j} infor={Items[i * 6 + j]} />,
-      )
-    }
-    items.push(
-      <div className="row" key={i}>
-        {itemRow}
-      </div>,
-    )
-  }
-  return items
 }
 function RenderItemList() {
   const refObj = useRef({
@@ -125,12 +91,21 @@ function RenderItemList() {
 }
 const Item = (props) => {
   const { infor, type } = props
+  const itemRef = useRef(null)
+  const dispatch = useDispatch()
+  function handleDetailPopup() {
+    dispatch(detailPopupSlice.actions.showPopup(infor))
+  }
+  useEffect(() => {
+    itemRef.current.parentElement.setAttribute('data-after', infor.name)
+  })
   return (
     <div className="item col-6 col-sm-2" key={infor.id}>
-      <Link className="wrapper" to={'/marketplace/' + infor.id}>
+      {/* <Link className="wrapper" to={'/marketplace/' + infor.id}> */}
+      <div className="wrapper" onClick={handleDetailPopup}>
         <div className="title">
           <img src={require('assets/img/title.png')} alt="error png" />
-          <span>ID: {infor.id}</span>
+          <span ref={itemRef}>{infor.name}</span>
         </div>
         <div className="img">
           <img
@@ -138,30 +113,33 @@ const Item = (props) => {
             alt="error png"
           />
         </div>
-        <div className="name">{infor.name}</div>
         <div className="information">
-          <div className="left">
-            <div className="info-item">
-              <label>Rarity: </label>
-              <div>{infor.rarity}</div>
-            </div>
-            <div className="info-item">
-              <label>Type: </label>
-              <div>{infor.type}</div>
-            </div>
+          <div className="info-item">
+            <img src={require('assets/img/gem1.png')} alt="error png" />
+            <label>Rarity: </label>
+            <span>{infor.rarity}</span>
           </div>
-          <div className="right">
-            <div className="info-item">
-              <label>Date: </label>
-              <div>29/5/2022</div>
-            </div>
-            {infor.type !== 'weapon' && (
-              <div className="info-item">
-                <label>Object: </label>
-                <div>{type}</div>
-              </div>
-            )}
+          <div className="info-item">
+            <img src={require('assets/img/gem3.png')} alt="error png" />
+            <label>Date: </label>
+            <span>29/5/2022</span>
           </div>
+          <div className="info-item">
+            <img src={require('assets/img/gem2.png')} alt="error png" />
+            <label>Type: </label>
+            <span>{infor.type}</span>
+          </div>
+          {infor.type !== 'weapon' ? (
+            <div className="info-item">
+              <img src={require('assets/img/gem4.png')} alt="error png" />
+              <label>Object: </label>
+              <span>{type}</span>
+            </div>
+          ) : (
+            <div className="info-item">
+              <span>&nbsp;</span>
+            </div>
+          )}
         </div>
         <div className="price">
           <span className="img">
@@ -170,9 +148,13 @@ const Item = (props) => {
           <span className="coin">380 SQF</span>
         </div>
         <div className="button">
-          <button>Buy</button>
+          <button>
+            <Popup />
+            Buy
+          </button>
         </div>
-      </Link>
+        {/* </Link> */}
+      </div>
     </div>
   )
 }

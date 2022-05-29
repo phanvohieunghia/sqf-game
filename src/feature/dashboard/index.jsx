@@ -3,7 +3,7 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom'
 
 import './style.scss'
 import 'assets/scss/tab.scss'
-import Popup from 'components/popup'
+import Popup from 'components/popup/comingsoon'
 
 const Dashboard = () => {
   const { pathname } = useLocation()

@@ -31,9 +31,9 @@
   {
     "id": 2,
     "type": "ring",
-    "name": "Collect the ring condensed by the spirit of flame",
+    "name": "Of Flame",
     "path": "ring_01.png",
-    "introduction": "",
+    "introduction": "Collect the ring condensed by the spirit of flame",
     "attack_stone": "No Scoket",
     "health_stone": "No Scoket",
     "defense_stone": "No Scoket",

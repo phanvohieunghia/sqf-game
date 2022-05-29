@@ -1,7 +1,7 @@
-import Popup from 'components/popup'
 import React from 'react'
 
 import './style.scss'
+import Popup from 'components/popup/comingsoon'
 
 const Header = () => {
   return (
@@ -18,7 +18,6 @@ const Header = () => {
       </div>
       <div className="button">
         <Popup />
-        Connect wallet
       </div>
     </header>
   )

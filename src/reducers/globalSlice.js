@@ -5,6 +5,7 @@ const globalSlide = createSlice({
   initialState: {
     menuMobile: false,
     popup: false,
+    detailPopup: false,
   },
   reducers: {
     toggleMenu: (state, action) => {
@@ -12,6 +13,9 @@ const globalSlide = createSlice({
     },
     showPopup: (state, action) => {
       state.popup = action.payload
+    },
+    showDetailPopup: (state, action) => {
+      state.detailPopup = action.payload
     }
   },
 })

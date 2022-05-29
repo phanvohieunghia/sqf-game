@@ -2,8 +2,8 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 
 import './style.scss'
-import Popup from 'components/popup'
 import Items from 'assets/data/items.json'
+import Popup from 'components/popup/comingsoon'
 // import SetItems from 'assets/data/set-items.json'
 
 const Detail = () => {
