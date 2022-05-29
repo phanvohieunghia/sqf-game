@@ -1,14 +1,12 @@
-import Popup from 'components/popup'
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 
 import './style.scss'
+import Popup from 'components/popup/comingsoon'
 
 const Token = () => {
   const { pathname } = useLocation()
   const isAirdrop = pathname === '/vesting/airdrop'
-  console.log(isAirdrop)
-
   return (
     <div className="box-token">
       <div className="left item">

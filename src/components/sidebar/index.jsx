@@ -2,11 +2,10 @@ import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 
 import './style.scss'
-import Popup from 'components/popup'
+import Popup from 'components/popup/comingsoon'
 
 const Sidebar = () => {
   const { pathname } = useLocation()
-  console.log(pathname)
   return (
     <div className="sidebar">
       <div className="img">
@@ -18,10 +17,9 @@ const Sidebar = () => {
       >
         Dashboard
       </NavLink>
-      <NavLink to="/egg-baskets">
+      {/* <NavLink to="/egg-baskets">
         Egg baskets
-        <Popup />
-      </NavLink>
+      </NavLink> */}
       <NavLink to="my-assets">My Assets</NavLink>
       <NavLink to="marketplace">Marketplace</NavLink>
       <NavLink to="staking">Staking</NavLink>

@@ -1,7 +1,7 @@
-import Popup from 'components/popup'
 import React from 'react'
 
 import './style.scss'
+import Popup from 'components/popup/comingsoon'
 
 const OnMarket = () => {
   return (

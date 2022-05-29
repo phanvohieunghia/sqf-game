@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './style.scss'
-import Popup from 'components/popup'
+import Popup from 'components/popup/comingsoon'
 
 const NotOnMaket = () => {
   return (
@@ -61,7 +61,7 @@ const Item = ({ id }) => {
         </div>
         <div className="button">
           <button>
-            Buy
+            Sell
             <Popup />
           </button>
         </div>

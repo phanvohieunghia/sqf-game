@@ -1,0 +1,160 @@
+@import 'assets/scss/valuable';
+@import 'assets/scss/responsive';
+@import 'assets/scss/animation';
+
+#popup-detail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  color: $white-color;
+  animation: show-detail-popup-main 0.4s ease-in-out;
+  .wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: #004755;
+
+    .close {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      svg {
+        fill: $white-color;
+      }
+    }
+    .title-box {
+      margin-top: 32px;
+      .container {
+        width: 920px;
+        h3 {
+          font-size: 42px;
+          font-weight: 700;
+          margin-bottom: 0;
+          margin-left: 20px;
+        }
+        .level {
+          font-size: 20px;
+        }
+      }
+    }
+    .box-detail {
+      margin-bottom: 40px;
+      .container {
+        display: flex;
+        justify-content: center;
+        .left {
+          text-align: center;
+          margin-right: 40px;
+          margin-left: 20px;
+          .img {
+            img {
+              width: 200px;
+            }
+          }
+          .price {
+            margin-top: 16px;
+            img {
+              width: 34px;
+            }
+            span {
+              color: $white-color;
+              font-size: 18px;
+              padding-left: 8px;
+            }
+          }
+          .button {
+            background: url('/assets/img/button5.png') no-repeat center / 100%
+              100%;
+            margin-top: 10px;
+            height: 36px;
+            position: relative;
+            width: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            button {
+              height: 100%;
+              width: 100%;
+              color: $white-color;
+              background-color: transparent;
+              border: none;
+              outline: none;
+              font-size: 14px;
+              text-shadow: 1px 1px 2px #000;
+            }
+          }
+        }
+        .right {
+          flex-basis: 50%;
+          h3 {
+            font-weight: 700;
+            font-size: 26px;
+            margin: 20px 0 8px;
+            margin-left: 0;
+          }
+          .content {
+            background-color: rgba(26, 56, 101, 0.22);
+            border-radius: 5px;
+            border: 1px solid rgba(108, 165, 214, 0.8);
+            padding: 8px 12px;
+            .description {
+              font-size: 18px;
+            }
+            hr {
+              height: 2px;
+            }
+            .item {
+              margin-bottom: 16px;
+              font-size: 18px;
+              label {
+                color: #bbbdbf;
+              }
+              span {
+                margin-left: 8px;
+              }
+            }
+            .item.special {
+              color: #e4664f;
+              label {
+                color: #e4664f;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @include media('screen', '<tablet') {
+    .wrapper {
+      .box-detail {
+        .container {
+          flex-direction: column;
+          .left {
+            margin-left: 40px;
+          }
+          .right {
+            margin-left: 16px;
+            margin-right: 16px;
+            .content {
+              margin-bottom: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#popup-detail.close-popup {
+  animation: close-detail-popup-main 0.4s ease-in-out;
+}

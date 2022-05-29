@@ -1,10 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import React, { useRef, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
 import './style.scss'
 import Pagination from 'components/pagination'
 import Icons from 'assets/icons'
-import Popup from 'components/popup'
+import Items from 'assets/data/items.json'
+import detailPopupSlice from 'components/popup/detail/slice'
+import Popup from 'components/popup/comingsoon'
 
 const MarketPlace = () => {
   return (
@@ -14,16 +17,7 @@ const MarketPlace = () => {
           <div className="d-flex container justify-content-center">
             <div className="item">
               <span className="img">
-                <img src={require('assets/img/item.png')} alt="error png" />
-              </span>
-              <span className="infor">
-                <h4>Last price</h4>
-                <span className="greenColor">384</span>
-              </span>
-            </div>
-            <div className="item">
-              <span className="img">
-                <img src={require('assets/img/item.png')} alt="error png" />
+                <img src={require('assets/img/summary.png')} alt="error png" />
               </span>
               <span className="infor">
                 <h4>Total volume</h4>
@@ -32,7 +26,7 @@ const MarketPlace = () => {
             </div>
             <div className="item">
               <span className="img">
-                <img src={require('assets/img/item.png')} alt="error png" />
+                <img src={require('assets/img/summary.png')} alt="error png" />
               </span>
               <span className="infor">
                 <h4>MSP price</h4>
@@ -41,16 +35,6 @@ const MarketPlace = () => {
                 </span>
               </span>
             </div>
-          </div>
-        </div>
-        <div className="tab">
-          <div className="item">
-            Egg Basbet
-            <Popup />
-          </div>
-          <div className="item">
-            Item
-            <Popup />
           </div>
         </div>
         <div className="filter">
@@ -68,49 +52,109 @@ const MarketPlace = () => {
           </div>
         </div>
         <div className="list-item">
-          <div className="container">{renderItemList()}</div>
+          <div className="container">
+            <RenderItemList />
+          </div>
         </div>
       </div>
       <Pagination />
     </div>
   )
 }
-function renderItemList() {
-  const items = []
-  for (var i = 0; i < 4; i++) {
-    const itemRow = []
-    for (var j = 0; j < 6; j++) {
-      itemRow.push(<Item id={i * 6 + j} key={i * 6 + j} />)
-    }
-    items.push(
-      <div className="row" key={i}>
-        {itemRow}
-      </div>,
-    )
-  }
-  return items
-}
-const Item = ({ id }) => {
+function RenderItemList() {
+  const refObj = useRef({
+    weapon: 'weapon',
+    head: 'outfit',
+    face: 'outfit',
+    clothes: 'outfit',
+    wing: 'outfit',
+    outfit: 'outfit',
+    necklace: 'accessories',
+    ring: 'accessories',
+    bracer: 'accessories',
+    treasure: 'accessories',
+    badge: 'accessories',
+    earrings: 'accessories',
+    stone: 'materiral',
+    forge: 'materiral',
+    holy_light: 'materiral',
+    mounts: 'pet',
+    assistant: 'pet',
+  })
   return (
-    <div className="item col-6 col-sm-2" key={id}>
-      <Link className="wrapper" to={'/marketplace/' + id}>
+    <div className="row">
+      {Items.map((item) => {
+        return <Item infor={item} type={refObj.current[item.type]} />
+      })}
+    </div>
+  )
+}
+const Item = (props) => {
+  const { infor, type } = props
+  const itemRef = useRef(null)
+  const dispatch = useDispatch()
+  function handleDetailPopup() {
+    dispatch(detailPopupSlice.actions.showPopup(infor))
+  }
+  useEffect(() => {
+    itemRef.current.parentElement.setAttribute('data-after', infor.name)
+  })
+  return (
+    <div className="item col-6 col-sm-2" key={infor.id}>
+      {/* <Link className="wrapper" to={'/marketplace/' + infor.id}> */}
+      <div className="wrapper" onClick={handleDetailPopup}>
         <div className="title">
           <img src={require('assets/img/title.png')} alt="error png" />
-          <span>ID: 3165</span>
+          <span ref={itemRef}>{infor.name}</span>
         </div>
         <div className="img">
-          <img src={require('assets/img/item.png')} alt="error png" />
+          <img
+            src={require(`assets/img/items/${infor.path}`)}
+            alt="error png"
+          />
+        </div>
+        <div className="information">
+          <div className="info-item">
+            <img src={require('assets/img/gem1.png')} alt="error png" />
+            <label>Rarity: </label>
+            <span>{infor.rarity}</span>
+          </div>
+          <div className="info-item">
+            <img src={require('assets/img/gem3.png')} alt="error png" />
+            <label>Date: </label>
+            <span>29/5/2022</span>
+          </div>
+          <div className="info-item">
+            <img src={require('assets/img/gem2.png')} alt="error png" />
+            <label>Type: </label>
+            <span>{infor.type}</span>
+          </div>
+          {infor.type !== 'weapon' ? (
+            <div className="info-item">
+              <img src={require('assets/img/gem4.png')} alt="error png" />
+              <label>Object: </label>
+              <span>{type}</span>
+            </div>
+          ) : (
+            <div className="info-item">
+              <span>&nbsp;</span>
+            </div>
+          )}
         </div>
         <div className="price">
           <span className="img">
             <img src={require('assets/img/coin.png')} alt="error png" />
           </span>
-          <span className="coins">
-            <h4 className="cCoin">380MSP</h4>
-            <span className="convertCoin">~ 89.70 BUSD</span>
-          </span>
+          <span className="coin">380 SQF</span>
         </div>
-      </Link>
+        <div className="button">
+          <button>
+            <Popup />
+            Buy
+          </button>
+        </div>
+        {/* </Link> */}
+      </div>
     </div>
   )
 }
