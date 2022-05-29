@@ -90,7 +90,8 @@ function renderItemList() {
   }
   return items
 }
-const Item = ({ id }) => {
+const Item = (props) => {
+  const { id } = props
   return (
     <div className="item col-6 col-sm-2" key={id}>
       <Link className="wrapper" to={'/marketplace/' + id}>
@@ -101,14 +102,33 @@ const Item = ({ id }) => {
         <div className="img">
           <img src={require('assets/img/item.png')} alt="error png" />
         </div>
+        <div className="information">
+          <div className="left">
+            <div className="info-item">
+              <label>Rarity: </label>
+              <div>Normal</div>
+            </div>
+            <div className="info-item">
+              <label>Type: </label>
+              <div>Outfit</div>
+            </div>
+          </div>
+          <div className="right">
+            <div className="info-item">
+              <label>Date: </label>
+              <div>29/5/2022</div>
+            </div>
+            <div className="info-item">
+              <label>Object: </label>
+              <div>Head</div>
+            </div>
+          </div>
+        </div>
         <div className="price">
           <span className="img">
             <img src={require('assets/img/coin.png')} alt="error png" />
           </span>
-          <span className="coins">
-            <h4 className="cCoin">380MSP</h4>
-            <span className="convertCoin">~ 89.70 BUSD</span>
-          </span>
+          <span className="coin">380 SQF</span>
         </div>
       </Link>
     </div>
