@@ -2,6 +2,11 @@
 import React, { useRef, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
+// MUI
+import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
+import Divider from '@mui/material/Divider';
+
 import './style.scss'
 import Pagination from 'components/pagination'
 import Icons from 'assets/icons'
@@ -10,35 +15,160 @@ import detailPopupSlice from 'components/popup/detail/slice'
 import Popup from 'components/popup/comingsoon'
 
 const MarketPlace = () => {
+
+   // Handle Modal Nav Moible
+    const [stateNav, setStateNav] = React.useState({
+        top: false,
+        left: false,
+        bottom: false,
+        right: false,
+    }); 
+
+    const modalCartNav = (anchor) => (
+        <Box
+          sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+          role="presentation"
+          onClick={toggleDrawerNav(anchor, false)}
+          onKeyDown={toggleDrawerNav(anchor, false)}
+        >
+            <div>
+                <div className="cart-title">
+                    <div className=" nav-logo">
+                       <img src="/images/logo.png" alt="" />
+                    </div>
+                    <div className="cart-title-close">
+                        <button className="clear-btn">
+                            <i className="fa-solid fa-circle-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <Divider />
+            <div className="tempty-title" >
+                <a href="https://google.com" className="nav-item">
+                    <div className="nav-item-name active" >
+                        Home
+                    </div>
+                </a>
+            </div>
+
+            <div className="tempty-title" >
+                <a href="https://google.com" className="nav-item">
+                    <div className="nav-item-name" >
+                        Marketplace
+                    </div>
+                </a>
+            </div>
+
+             <div className="tempty-title" >
+                <a href="https://google.com" className="nav-item">
+                    <div className="nav-item-name" >
+                        Whitepaper
+                    </div>
+                </a>
+            </div>
+
+            {/* <div className="tempty-title" >
+                <a href="https://google.com" className="nav-item">
+                    <div className="nav-item-name">
+                        News
+                    </div>
+                </a>
+            </div> */}
+
+            <div className="tempty-title">
+                <a href="https://google.com" className="nav-item">
+                    <div className="nav-item-name">
+                        Event
+                    </div>
+                </a>
+            </div>
+
+            <div className="tempty-title">
+                <a href="https://google.com" className="nav-item">
+                    <div className="nav-item-name">
+                        Sign up
+                    </div>
+                </a>
+            </div>
+
+            <div className="tempty-title">
+                <a href="https://google.com" className="nav-item">
+                    <div className="nav-item-name nav-item-name--primary">
+                        Play Game
+                    </div>
+                </a>
+            </div>
+
+            <div className="tempty-title">
+                <a href="https://google.com" className="nav-item">
+                    <div className="nav-item-name nav-item-name--primary">
+                        Wallet Connect
+                    </div>
+                </a>
+            </div>
+        </Box>
+    );
+
+    const toggleDrawerNav = (anchor, open) => (event) => {
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+            return;
+        }
+    
+        setStateNav({ ...stateNav, [anchor]: open });
+    };
+
   return (
     <div id="marketplace">
       <div className="main">
-        <div className="summary">
-          <div className="d-flex container justify-content-center">
-            <div className="item">
-              <span className="img">
-                <img src={require('assets/img/summary.png')} alt="error png" />
-              </span>
-              <span className="infor">
-                <h4>Total volume</h4>
-                <span className="yellowColor">161284</span>
-              </span>
+
+        {/* Modal Nav Mobile Menu*/}
+        <Drawer
+            anchor={'left'}
+            open={stateNav['left']}
+            onClose={toggleDrawerNav('left', false)}
+        >
+            {modalCartNav('left')}
+        </Drawer>
+
+        <div className="summary container">
+          <div className="row">
+            <div className="col-xl-6 col-12">
+              <div className="d-flex container justify-content-center">
+                <div className="item cart-title">
+                  <span className="img">
+                    <img src={require('assets/img/summary.png')} alt="error png" />
+                  </span>
+                  <span className="infor">
+                    <h4>Total volume</h4>
+                    <span className="primary-tex-yellow">161284</span>
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="item">
-              <span className="img">
-                <img src={require('assets/img/summary.png')} alt="error png" />
-              </span>
-              <span className="infor">
-                <h4>MSP price</h4>
-                <span className="yellowColor">
-                  0.18 <span>BUSD</span>
-                </span>
-              </span>
+            <div className="col-xl-6 col-12">
+              <div className="d-flex container justify-content-center">
+               <div className="item cart-title">
+                  <span className="img">
+                    <img src={require('assets/img/summary.png')} alt="error png" />
+                  </span>
+                  <span className="infor">
+                    <h4>MSP price</h4>
+                    <span className="primary-tex-yellow">
+                      0.18 
+                    </span>
+                    <span>BUSD</span>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
         <div className="filter">
-          <label>Filter</label>
+          <div className="filter-title primary-tex-gray font-weight-700 font-size-18" onClick={toggleDrawerNav('left', true)}>
+            Filter
+          </div>
           <div className="select">
             <Icons.AngleDown height={'10'} />
             <select>
@@ -100,7 +230,7 @@ const Item = (props) => {
     itemRef.current.parentElement.setAttribute('data-after', infor.name)
   })
   return (
-    <div className="item col-6 col-sm-2" key={infor.id}>
+    <div className="item col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2" key={infor.id}>
       {/* <Link className="wrapper" to={'/marketplace/' + infor.id}> */}
       <div className="wrapper" onClick={handleDetailPopup}>
         <div className="title">

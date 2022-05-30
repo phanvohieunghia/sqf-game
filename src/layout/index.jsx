@@ -18,11 +18,11 @@ const Layout = () => {
       <DetailPopup />
       <main>
         {/* <Firefly /> */}
-        {window.innerWidth < 1024 && (
+        {/* {window.innerWidth < 1024 && (
           <div className="logo">
             <img src={require('assets/img/logo.png')} alt="error png" />
           </div>
-        )}
+        )} */}
         <Header />
         <Outlet />
       </main>

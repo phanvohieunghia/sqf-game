@@ -3,22 +3,35 @@
   top: 0;
   left: 0;
   padding: 20px;
-  z-index: 20;
-  height: 80px;
-  width: 80px;
+  height: 70px;
   z-index: 20;
   display: flex;
-  justify-content: center;
   align-items: center;
-  &::before {
-    content: '';
+  justify-content: space-between;
+  background-color: #000;
+  width: 100%;
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 8px;
+  //   left: 8px;
+  //   right: 8px;
+  //   bottom: 8px;
+  //   filter: blur(2px);
+  // }
+  &-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     position: absolute;
-    top: 8px;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
-    filter: blur(2px);
-    background-color: rgba(0, 0, 0, 0.63);
+    right: 10px;
+    top: 0;
+
+    img{
+      height: 80%;
+      width: auto;
+    }
   }
   .nav-icon {
     margin: 0;
