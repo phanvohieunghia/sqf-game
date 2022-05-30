@@ -10,9 +10,9 @@ const NFTs = () => {
         <img src={require('assets/img/item2.png')} alt="error png" />
       </div>
       <div className="right item">
-        <h1>NFTs</h1>
-        <p>
-          Amount of MSP can claim: <span className="green-color">0</span>
+        <h1 className="primary-tex-yellow">NFTs</h1>
+        <p className="primary-tex-gray font-weight-700">
+          Amount of MSP can claim: <span className="primary-tex-yellow font-weight-700 font-size-18">0</span>
         </p>
         <div className="claim-button">
           <button>

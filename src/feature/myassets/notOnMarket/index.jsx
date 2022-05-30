@@ -6,7 +6,7 @@ import Popup from 'components/popup/comingsoon'
 const NotOnMaket = () => {
   return (
     <div className="not-on-market-box">
-      <div className="container">
+      {/* <div className="container">
         <div className="transfer">
           <div className="item">
             <label>Transfer to wallet</label>
@@ -26,7 +26,7 @@ const NotOnMaket = () => {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="list-item">
         <div className="container">{renderItemList()}</div>
       </div>

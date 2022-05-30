@@ -19,6 +19,10 @@ const Button = () => {
       >
         <div></div>
       </div>
+
+      <div className="menu-logo">
+        <img src={require('assets/img/logo.png')} alt="error png" />
+      </div>
     </div>
   )
 }

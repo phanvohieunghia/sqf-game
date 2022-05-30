@@ -13,25 +13,39 @@ const Token = () => {
         <img src={require('assets/img/item2.png')} alt="error png" />
       </div>
       <div className="right item">
-        <h1>Token</h1>
+        <h1 className="primary-tex-yellow">Token</h1>
         {!isAirdrop && (
           <>
-            <p>
-              Total locked SQF: <span className="green-color">0</span> MSP
+            <p className="primary-tex-gray font-weight-700">
+              Total locked SQF: 
+              <div>
+                <span className="primary-tex-yellow">0</span> MSP
+              </div>
             </p>
-            <p>
-              Total MSP claimed: <span className="green-color">0</span>
+            <p className="primary-tex-gray font-weight-700">
+              Total MSP claimed: 
+              <div>
+                <span className="primary-tex-yellow">0</span>
+              </div>
             </p>
-            <p>
-              Next claimable percent: <span className="green-color">0</span> MSP
+            <p className="primary-tex-gray font-weight-700">
+              Next claimable percent: 
+              <div>
+                <span className="primary-tex-yellow">0</span> MSP
+              </div>
             </p>
           </>
         )}
-        <p>
-          Amount of MSP can claim: <span className="green-color">0</span>
+        <p className="primary-tex-gray font-weight-700">
+          Amount of MSP can claim: 
+          <div>
+            <span className="primary-tex-yellow">0</span>
+          </div>
         </p>
-        <p>
-          Unlock <span className="yellow-color">100%</span> when claim
+        <p className="primary-tex-gray font-weight-700">
+          <div>
+            Unlock <span className="yellow-color">100%</span> when claim
+          </div>
         </p>
         <div className="claim-button">
           <Popup />
