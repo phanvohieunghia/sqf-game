@@ -130,7 +130,7 @@ const MarketPlace = () => {
                       <input type="radio" value="Treasure" name="Accessories" /> Treasure
                     </div>
                     <div className="filter-tab-item">
-                      <input type="radio" value="Badge" name="Accessories" /> Badge
+                      <input type="radio" value="Badge" name="Accessories" /> Badges
                     </div>
                     <div className="filter-tab-item">
                       <input type="radio" value="Earrings" name="Accessories" /> Earrings
