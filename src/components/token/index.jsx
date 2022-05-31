@@ -2,7 +2,7 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 
 import './style.scss'
-import Popup from 'components/popup/comingsoon'
+import Popup from 'components/popup/comingsoon-old'
 
 const Token = () => {
   const { pathname } = useLocation()

@@ -4,6 +4,7 @@ import Popup from 'components/popup/comingsoon'
 import { Link } from 'react-router-dom'
 import { connectWallet } from 'utils/connectWallet'
 import { getBalance } from 'utils/Wallet'
+import Popup from 'components/popup/comingsoon-old'
 
 const Header = () => {
   const [account,setAccount] = useState(false);

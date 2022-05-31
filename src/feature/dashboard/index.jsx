@@ -1,12 +1,11 @@
 import React from 'react'
-import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 import './style.scss'
 import 'assets/scss/tab.scss'
 
-
 const Dashboard = () => {
-  const { pathname } = useLocation()
+  // const { pathname } = useLocation()
   return (
     <div id="dashboard">
       <div className="tab">

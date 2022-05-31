@@ -5,7 +5,7 @@ import './style.scss'
 
 import { detailPopupSelector } from 'selectors'
 import detailPopupSlice from 'components/popup/detail/slice'
-import Popup from 'components/popup/comingsoon'
+import Popup from 'components/popup/comingsoon-old'
 import Icons from 'assets/icons'
 
 const Detail = () => {

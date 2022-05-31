@@ -2,7 +2,6 @@ import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 
 import './style.scss'
-import Popup from 'components/popup/comingsoon'
 
 const Sidebar = () => {
   const { pathname } = useLocation()

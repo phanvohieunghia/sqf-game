@@ -8,7 +8,7 @@ import Pagination from 'components/pagination'
 import Icons from 'assets/icons'
 import Items from 'assets/data/items.json'
 import detailPopupSlice from 'components/popup/detail/slice'
-import Popup from 'components/popup/comingsoon'
+import Popup from 'components/popup/comingsoon-old'
 import TypeItem from 'assets/data/item-type.json'
 
 const MarketPlace = () => {
@@ -262,11 +262,8 @@ const MarketPlace = () => {
                   <input type="text" placeholder="Egg basket ID" />
                   <img src={require('assets/img/search.png')} alt="error png" />
                 </div>
-                <div
-                  className="filter-icon"
-                  onClick={toggleDrawerNav('right', true)}
-                >
-                  <i class="fa-solid fa-filter"></i>
+                <div className="icon" onClick={toggleDrawerNav('right', true)}>
+                  <Icons.Filter height={'18'} />
                 </div>
               </div>
             </div>

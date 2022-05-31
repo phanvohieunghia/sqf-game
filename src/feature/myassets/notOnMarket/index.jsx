@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 
 import './style.scss'
 import TypeItem from 'assets/data/item-type.json'
-import Popup from 'components/popup/comingsoon'
+import Popup from 'components/popup/comingsoon-old'
 import Items from 'assets/data/items.json'
 import detailPopupSlice from 'components/popup/detail/slice'
 

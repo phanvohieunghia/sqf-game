@@ -4,7 +4,7 @@ const globalSlide = createSlice({
   name: 'global',
   initialState: {
     menuMobile: false,
-    popup: false,
+    ComingSoonPopup: false,
     detailPopup: false,
   },
   reducers: {
@@ -12,7 +12,7 @@ const globalSlide = createSlice({
       state.menuMobile = action.payload
     },
     showPopup: (state, action) => {
-      state.popup = action.payload
+      state.ComingSoonPopup = action.payload
     },
     showDetailPopup: (state, action) => {
       state.detailPopup = action.payload

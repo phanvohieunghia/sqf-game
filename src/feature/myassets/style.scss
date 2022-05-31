@@ -23,7 +23,7 @@
       line-height: 48px;
       margin-left: 48px;
       margin-right: 48px;
-      font-size: 18px;
+      font-size: 1.8rem;
       text-decoration: none;
       color: #fcd130;
     }
@@ -33,6 +33,7 @@
     }
   }
   .list-item {
+    margin-bottom: 50px;
     .container .row .item {
       padding-left: 0;
       padding-right: 0;
@@ -65,7 +66,7 @@
             position: absolute;
             content: attr(data-after);
             color: transparent;
-            font-size: 17px;
+            font-size: 1.8rem;
             font-weight: 700;
             top: 50%;
             left: 50%;
@@ -82,7 +83,7 @@
             left: 50%;
             white-space: nowrap;
             transform: translate(-50%, -50%);
-            font-size: 17px;
+            font-size: 1.8rem;
             font-weight: 700;
             background-image: linear-gradient(#fddd1c, #f59424);
             -webkit-background-clip: text;
@@ -95,7 +96,7 @@
           overflow: hidden;
           -webkit-line-clamp: 1;
           -webkit-box-orient: vertical;
-          font-size: 18px;
+          font-size: 1.8rem;
           font-weight: 700;
           color: $white-color;
           padding: 8px 12px;
@@ -113,7 +114,7 @@
           line-height: 26px;
           min-height: 160px;
           .info-item {
-            font-size: 13px;
+            font-size: 1.4rem;
             margin-bottom: 10px;
             color: $white-color;
             display: flex;
@@ -145,7 +146,7 @@
           > .coin {
             vertical-align: middle;
             color: #fdca50;
-            font-size: 16px;
+            font-size: 1.6rem;
             font-weight: 700;
           }
         }
@@ -164,7 +165,7 @@
             background-color: transparent;
             border: none;
             outline: none;
-            font-size: 14px;
+            font-size: 1.4rem;
             text-shadow: 1px 1px 2px #000;
           }
         }
@@ -178,7 +179,7 @@
     .tab {
       width: 100%;
       .item {
-        font-size: 14px;
+        font-size: 1.4rem;
       }
     }
   }

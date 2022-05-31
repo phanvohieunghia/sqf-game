@@ -6,15 +6,15 @@
   .box-vesting {
     text-align: center;
     h1 {
-      font-size: 32px;
+      font-size: 3.2rem;
       margin-top: 40px;
       color: $yellow-color;
     }
     .total-raise {
-      font-size: 32px;
+      font-size: 3.2rem;
     }
     .text {
-      font-size: 18px;
+      font-size: 1.8rem;
       margin: 48px 12px 16px;
       min-height: 100px;
     }
@@ -27,13 +27,13 @@
     .item {
       margin-bottom: 16px;
       .label {
-        font-size: 15px;
+        font-size: 1.6rem;
         position: relative;
         span {
           position: absolute;
           top: 0;
           right: 0;
-          font-size: 14px;
+          font-size: 1.4rem;
           color: $yellow-color;
         }
       }
@@ -50,7 +50,7 @@
         }
       }
       .detail {
-        font-size: 14px;
+        font-size: 1.4rem;
         position: relative;
         color: $yellow-color;
         span {
@@ -74,12 +74,12 @@
       text-align: center;
       height: 140px;
       h3 {
-        font-size: 38px;
+        font-size: 3.8rem;
         margin-top: 36px;
         color: $green-color;
       }
       span {
-        font-size: 22px;
+        font-size: 2.2rem;
       }
     }
   }
@@ -100,7 +100,7 @@
       flex-grow: 1;
       margin-right: 36px;
       p {
-        font-size: 16px;
+        font-size: 1.6rem;
       }
     }
     .img {
@@ -122,9 +122,9 @@
       width: calc(100% - 24px);
       .item {
         .label {
-          font-size: 12px;
+          font-size: 1.2rem;
           span {
-            font-size: 12px;
+            font-size: 1.2rem;
           }
         }
       }

@@ -17,7 +17,7 @@
       min-width: 400px;
       max-width: 575px;
       h1 {
-        font-size: 38px;
+        font-size: 3.8rem;
         font-weight: 700;
       }
       .info {
@@ -26,12 +26,12 @@
         display: flex;
         &-item {
           flex-basis: 50%;
-          font-size: 12px;
+          font-size: 1.2rem;
           .title {
             line-height: 26px;
           }
           .coin span {
-            font-size: 24px;
+            font-size: 2.4rem;
             padding-right: 8px;
           }
         }
@@ -48,7 +48,7 @@
           background-color: transparent;
           border: none;
           outline: none;
-          font-size: 14px;
+          font-size: 1.4rem;
           text-shadow: 1px 1px 2px #000;
         }
       }
@@ -61,7 +61,7 @@
         margin: 20px 0;
         color: $blue-color;
         span {
-          font-size: 24px;
+          font-size: 2.4rem;
           padding-right: 8px;
         }
       }
@@ -83,7 +83,7 @@
           background-color: transparent;
           border: none;
           outline: none;
-          font-size: 14px;
+          font-size: 1.4rem;
           text-shadow: 1px 1px 2px #000;
         }
       }
@@ -106,9 +106,9 @@
         > span {
           display: block;
           flex-basis: 50%;
-          font-size: 14px;
+          font-size: 1.4rem;
           > span {
-            font-size: 18px;
+            font-size: 1.8rem;
           }
         }
       }
