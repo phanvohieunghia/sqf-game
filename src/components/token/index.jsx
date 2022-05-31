@@ -17,27 +17,27 @@ const Token = () => {
         {!isAirdrop && (
           <>
             <p className="primary-tex-gray font-weight-700">
-              Total locked SQF: 
+              Total locked SQF:
               <div>
-                <span className="primary-tex-yellow">0</span> MSP
+                <span className="primary-tex-yellow">0</span> SQF
               </div>
             </p>
             <p className="primary-tex-gray font-weight-700">
-              Total MSP claimed: 
+              Total SQF claimed:
               <div>
                 <span className="primary-tex-yellow">0</span>
               </div>
             </p>
             <p className="primary-tex-gray font-weight-700">
-              Next claimable percent: 
+              Next claimable percent:
               <div>
-                <span className="primary-tex-yellow">0</span> MSP
+                <span className="primary-tex-yellow">0</span> SQF
               </div>
             </p>
           </>
         )}
         <p className="primary-tex-gray font-weight-700">
-          Amount of MSP can claim: 
+          Amount of SQF can claim:
           <div>
             <span className="primary-tex-yellow">0</span>
           </div>

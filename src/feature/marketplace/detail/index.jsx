@@ -37,7 +37,7 @@ const Detail = () => {
             </div>
             <div className="price">
               <img src={require('assets/img/coin.png')} alt="error png" />
-              <span>490 MSP</span>
+              <span>490 SQF</span>
             </div>
             <div className="button">
               <button>

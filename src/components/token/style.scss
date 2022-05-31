@@ -1,3 +1,4 @@
+@import 'assets/scss/valuable';
 @import 'assets/scss/responsive';
 
 #vesting {
@@ -10,10 +11,13 @@
     }
     .left {
       background-color: rgba(101, 37, 26, 0.22);
-      border-radius: 5px;
-      border: 2px solid #eb8825;
+      border-radius: 10px;
+      border: 2px solid $orange-color;
       padding: 16px 0;
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       img {
         max-width: 58%;
       }

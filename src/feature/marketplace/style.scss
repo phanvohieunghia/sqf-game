@@ -16,7 +16,6 @@
           display: flex;
           justify-content: center;
           img {
-            // width: 100%;
             height: 100%;
           }
         }
@@ -27,7 +26,7 @@
           position: absolute;
           top: 30%;
           left: 50%;
-          transform: translate(-50%,-50%);
+          transform: translate(-50%, -50%);
 
           h4 {
             font-size: 18px;
@@ -51,7 +50,7 @@
       display: flex;
       align-items: center;
       margin-bottom: 10px;
-      &-title{
+      &-title {
         margin-right: 12px;
       }
       label {
@@ -117,7 +116,7 @@
           right: 5px;
         }
       }
-      &-icon{
+      &-icon {
         border-radius: 10px;
         border: 1px solid #fff;
         background-color: rgba(0, 71, 85, 0.6);
@@ -126,12 +125,12 @@
         display: flex;
         margin-left: 12px;
 
-        &:hover{
+        &:hover {
           cursor: pointer;
         }
 
-        i{
-          margin:auto;
+        i {
+          margin: auto;
           font-size: 20px;
           color: #fff;
         }
@@ -231,6 +230,7 @@
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                text-transform: capitalize;
               }
             }
           }
@@ -278,7 +278,6 @@
     }
   }
 
-  
   @include media('screen', '<laptop') {
     .main {
       .summary {
@@ -298,9 +297,6 @@
             }
           }
         }
-      }
-      .tab {
-        width: 100%;
       }
     }
   }
@@ -350,6 +346,3 @@
     }
   }
 }
-
-
-

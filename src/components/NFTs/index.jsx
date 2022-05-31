@@ -12,7 +12,10 @@ const NFTs = () => {
       <div className="right item">
         <h1 className="primary-tex-yellow">NFTs</h1>
         <p className="primary-tex-gray font-weight-700">
-          Amount of MSP can claim: <span className="primary-tex-yellow font-weight-700 font-size-18">0</span>
+          Amount of SQF can claim:{' '}
+          <span className="primary-tex-yellow font-weight-700 font-size-18">
+            0
+          </span>
         </p>
         <div className="claim-button">
           <button>

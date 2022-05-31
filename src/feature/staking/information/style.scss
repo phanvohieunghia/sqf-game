@@ -1,3 +1,4 @@
+@import 'assets/scss/valuable';
 @import 'assets/scss/responsive';
 
 #staking {
@@ -13,7 +14,7 @@
         flex-basis: 50%;
         margin-left: 20px;
         background-color: rgba(26, 56, 101, 0.22);
-        border: 1px solid #92a2be;
+        border: 1px solid $orange-color;
         padding: 10px;
         p {
           font-size: 14px;
@@ -30,7 +31,7 @@
             min-width: 120px;
             th,
             td {
-              border: 1px solid #92a2be;
+              border: 1px solid $orange-color;
               min-width: 120px;
               padding: 8px 6px;
               text-align: center;

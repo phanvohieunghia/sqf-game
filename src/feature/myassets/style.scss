@@ -1,3 +1,4 @@
+@import 'assets/scss/valuable';
 @import 'assets/scss/responsive';
 
 #myassets {
@@ -7,12 +8,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+
   .tab {
     display: flex;
     width: 920px;
     justify-content: center;
-    margin: 40px auto 0;
+    margin: 40px auto 40px;
     .item {
       background: url('/assets/img/button2.png') no-repeat center center /
         contain;
@@ -24,11 +25,153 @@
       margin-right: 48px;
       font-size: 16px;
       text-decoration: none;
-      color: #fff;
+      color: $white-color;
     }
     .item.active {
       background: url('/assets/img/button2-active.png') no-repeat center center /
         contain;
+    }
+  }
+  .list-item {
+    .container .row .item {
+      padding-left: 0;
+      padding-right: 0;
+      .wrapper {
+        display: block;
+        background-color: #004755;
+        margin: 12px 6px 0;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: box-shadow 0.4s ease-in-out;
+        text-decoration: none;
+        cursor: pointer;
+        border: 2px solid $white-color;
+        // min-height: 435px;
+
+        &:hover {
+          box-shadow: inset 30px 0 60px rgb(86 132 190 / 65%),
+            inset -30px 0 60px rgb(86 132 190 / 45%);
+          > .img > img {
+            transform: scale(1.2);
+          }
+        }
+        .title {
+          position: relative;
+          background-color: $white-color;
+          border-bottom: 1px solid $white-color;
+          color: transparent;
+          > img {
+            width: 100%;
+          }
+          &::after {
+            position: absolute;
+            content: attr(data-after);
+            color: transparent;
+            font-size: 17px;
+            font-weight: 700;
+            top: 50%;
+            left: 50%;
+            white-space: nowrap;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            text-shadow: 0 0.5px 3px #15414c;
+          }
+          > span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            white-space: nowrap;
+            transform: translate(-50%, -50%);
+            font-size: 17px;
+            font-weight: 700;
+            background-image: linear-gradient(#fddd1c, #f59424);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            z-index: 3;
+          }
+        }
+        .name {
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          font-size: 18px;
+          font-weight: 700;
+          color: $white-color;
+          padding: 8px 12px;
+          line-height: 1.7;
+        }
+        > .img {
+          text-align: center;
+          > img {
+            transition: transform 0.4s ease-in-out;
+            height: 100px;
+          }
+        }
+        .information {
+          padding-left: 12px;
+          line-height: 26px;
+          min-height: 160px;
+          .info-item {
+            font-size: 13px;
+            margin-bottom: 10px;
+            color: $white-color;
+            display: flex;
+            label {
+              padding-left: 8px;
+              font-weight: 700;
+            }
+            span {
+              padding-left: 8px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              text-transform: capitalize;
+            }
+          }
+        }
+        .price {
+          text-align: center;
+          text-shadow: 1px 1px 3px #000;
+          letter-spacing: 2px;
+          margin-bottom: 12px;
+          > .img {
+            margin-right: 8px;
+            > img {
+              width: 26px;
+              height: 26px;
+            }
+          }
+          > .coin {
+            vertical-align: middle;
+            color: #fdca50;
+            font-size: 16px;
+            font-weight: 700;
+          }
+        }
+        .button {
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 10px;
+          width: 110px;
+          height: 36px;
+          background: url('/assets/img/button5.png') no-repeat center / 100%
+            100%;
+          button {
+            height: 100%;
+            width: 100%;
+            color: $white-color;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            text-shadow: 1px 1px 2px #000;
+          }
+        }
+        .button:last-child {
+          margin-bottom: 20px;
+        }
+      }
     }
   }
   @include media('screen', '<laptop') {
@@ -45,16 +188,6 @@
         margin-left: 6px;
         margin-right: 6px;
         width: 140px;
-      }
-    }
-    .filter {
-      .select {
-        margin-bottom: 8px;
-      }
-      .input {
-        margin-left: 8px;
-        margin-right: 8px;
-        width: calc(100% - 16px);
       }
     }
   }

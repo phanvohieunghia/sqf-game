@@ -37,7 +37,9 @@ const Detail = () => {
               <Icons.XMark height={'16'} />
             </div>
             <div className="title-box">
-              <h3 className="detail-name primary-tex-red">{currentItem.name}</h3>
+              <h3 className="detail-name primary-tex-red">
+                {currentItem.name}
+              </h3>
             </div>
             <div className="box-detail">
               <div className="container row">
@@ -50,7 +52,9 @@ const Detail = () => {
                   </div>
                   <div className="price">
                     <img src={require('assets/img/coin.png')} alt="error png" />
-                    <span className="primary-tex-gray font-weight-700">490 MSP</span>
+                    <span className="primary-tex-gray font-weight-700">
+                      490 SQF
+                    </span>
                   </div>
                   <div className="button">
                     <button>

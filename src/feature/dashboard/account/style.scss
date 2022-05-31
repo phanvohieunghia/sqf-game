@@ -10,17 +10,15 @@
     margin: 20px 0 8px;
     font-weight: 700;
   }
-  
-  h3:not(:first-child){
+  h3:not(:first-child) {
     margin-top: 50px;
   }
   .content {
     background-color: rgba(101, 37, 26, 0.22);
     border-radius: 5px;
-    border: 2px solid #eb8825;
+    border: 2px solid $orange-color;
     padding: 8px 12px;
-
-    &-wrap{
+    &-wrap {
       margin: auto;
       width: 60%;
     }
@@ -29,21 +27,17 @@
       font-size: 16px;
       display: flex;
       justify-content: space-between;
-
-      &:first-child{
+      &:first-child {
         margin-top: 16px;
       }
-
-      &-content{
+      &-content {
         display: flex;
         font-weight: 700;
-        
-        .unit{
+        .unit {
           display: flex;
           min-width: 40px;
         }
       }
-
       label {
         width: 200px;
         color: #bbbdbf;
@@ -62,7 +56,7 @@
       margin-bottom: 16px;
       font-size: 18px;
       background-color: #59070bc9;
-      border: 2px solid #eb8825;
+      border: 2px solid $orange-color;
       border-radius: 10px;
       margin-left: auto;
       margin-right: auto;
@@ -76,8 +70,7 @@
         color: #bbbdbf;
         cursor: pointer;
       }
-      
-      .btn-copy{
+      .btn-copy {
         flex: 1;
         display: flex;
         justify-content: flex-end;
@@ -86,12 +79,11 @@
           fill: $white-color;
           transition: all 0.5s ease-in-out;
         }
-
-        &:hover{
+        &:hover {
           cursor: pointer;
-          svg{
+          svg {
             transform: scale(1.2);
-            fill: #EBC126;
+            fill: #ebc126;
           }
         }
       }
@@ -105,20 +97,17 @@
       margin: 8px 0;
       font-size: 30px;
       font-weight: 700;
-      
       label {
         color: $white-color;
       }
-
-      img{
+      img {
         height: 50px;
         width: auto;
       }
     }
   }
-
   @include media('screen', '<laptop') {
-    .hd-items{
+    .hd-items {
       flex-direction: column;
       width: 100%;
     }

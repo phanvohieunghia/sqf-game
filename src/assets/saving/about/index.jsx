@@ -11,14 +11,14 @@ const ComingSoon = () => {
       <div className="right item">
         <h1>About</h1>
         <p>
-          Vested balance: <span className="green-color">0</span> MSP
+          Vested balance: <span className="green-color">0</span> SQF
         </p>
         <p>
-          Total MSP claimed: <span className="green-color">0</span>
+          Total SQF claimed: <span className="green-color">0</span>
         </p>
         <p>Next claimable on:...</p>
         <p>
-          Amount of MSP can claim: <span className="green-color">0</span>
+          Amount of SQF can claim: <span className="green-color">0</span>
         </p>
         <p>
           Distribution will start 1 day after listing, 6% of the total tokens

@@ -1,3 +1,5 @@
+@import 'assets/scss/valuable';
+
 .menu {
   position: fixed;
   top: 0;
@@ -10,16 +12,7 @@
   justify-content: space-between;
   background-color: #000;
   width: 100%;
-  // &::before {
-  //   content: '';
-  //   position: absolute;
-  //   top: 8px;
-  //   left: 8px;
-  //   right: 8px;
-  //   bottom: 8px;
-  //   filter: blur(2px);
-  // }
-  &-logo{
+  &-logo {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +21,7 @@
     right: 10px;
     top: 0;
 
-    img{
+    img {
       height: 80%;
       width: auto;
     }
@@ -43,7 +36,7 @@
   .nav-icon:after,
   .nav-icon:before,
   .nav-icon div {
-    background-color: #fff;
+    background-color: $white-color;
     border-radius: 3px;
     content: '';
     display: block;

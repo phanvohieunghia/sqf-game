@@ -1,74 +1,97 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
 import './style.scss'
+import TypeItem from 'assets/data/item-type.json'
 import Popup from 'components/popup/comingsoon'
+import Items from 'assets/data/items.json'
+import detailPopupSlice from 'components/popup/detail/slice'
 
 const NotOnMaket = () => {
   return (
     <div className="not-on-market-box">
-      {/* <div className="container">
-        <div className="transfer">
-          <div className="item">
-            <label>Transfer to wallet</label>
-            <input
-              type="text"
-              placeholder="Enter the wallet address you want to transfer to"
-            />
-          </div>
-          <div className="item">
-            <label>Transfer to wallet</label>
-            <input type="text" placeholder="Enter the quantity" />
-          </div>
-          <div className="button">
-            <button>
-              <Popup />
-              Button
-            </button>
-          </div>
-        </div>
-      </div> */}
       <div className="list-item">
-        <div className="container">{renderItemList()}</div>
+        <div className="container">
+          <RenderItemList />
+        </div>
       </div>
     </div>
   )
 }
-function renderItemList() {
-  const items = []
-  for (var i = 0; i < 2; i++) {
-    const itemRow = []
-    for (var j = 0; j < 6; j++) {
-      itemRow.push(<Item id={i * 6 + j} key={i * 6 + j} />)
-    }
-    items.push(
-      <div className="row" key={i}>
-        {itemRow}
-      </div>,
-    )
-  }
-  return items
-}
-const Item = ({ id }) => {
+function RenderItemList() {
+  const refObj = useRef(TypeItem)
   return (
-    <div className="item col-6 col-sm-2" key={id}>
-      <div className="wrapper">
+    <div className="row">
+      {Items.map((item) => {
+        return <Item infor={item} type={refObj.current[item.type]} />
+      })}
+    </div>
+  )
+}
+const Item = (props) => {
+  const { infor, type } = props
+  const itemRef = useRef(null)
+  const dispatch = useDispatch()
+  function handleDetailPopup() {
+    dispatch(detailPopupSlice.actions.showPopup(infor))
+  }
+  useEffect(() => {
+    itemRef.current.parentElement.setAttribute('data-after', infor.name)
+  })
+  return (
+    <div
+      className="item col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2"
+      key={infor.id}
+    >
+      <div className="wrapper" onClick={handleDetailPopup}>
         <div className="title">
           <img src={require('assets/img/title.png')} alt="error png" />
-          <span>ID: 3165</span>
+          <span ref={itemRef}>{infor.name}</span>
         </div>
         <div className="img">
-          <img src={require('assets/img/item.png')} alt="error png" />
+          <img
+            src={require(`assets/img/items/${infor.path}`)}
+            alt="error png"
+          />
+        </div>
+        <div className="information">
+          <div className="info-item">
+            <img src={require('assets/img/gem1.png')} alt="error png" />
+            <label>Rarity: </label>
+            <span>{infor.rarity}</span>
+          </div>
+          <div className="info-item">
+            <img src={require('assets/img/gem3.png')} alt="error png" />
+            <label>Date: </label>
+            <span>29/5/2022</span>
+          </div>
+          <div className="info-item">
+            <img src={require('assets/img/gem2.png')} alt="error png" />
+            <label>Type: </label>
+            <span>{infor.type}</span>
+          </div>
+          {infor.type !== 'weapon' ? (
+            <div className="info-item">
+              <img src={require('assets/img/gem4.png')} alt="error png" />
+              <label>Object: </label>
+              <span>{type}</span>
+            </div>
+          ) : (
+            <div className="info-item">
+              <span>&nbsp;</span>
+            </div>
+          )}
         </div>
         <div className="button">
           <button>
-            Sell
             <Popup />
+            Transfer
           </button>
         </div>
         <div className="button">
           <button>
-            Transfer
             <Popup />
+            Buy
           </button>
         </div>
       </div>

@@ -28,7 +28,7 @@ const PublicSale = () => {
           </div>
           <div className="detail">
             0%
-            <span>7.14MSP - 1BUSD</span>
+            <span>7.14SQF - 1BUSD</span>
           </div>
         </div>
         <div className="item">
@@ -41,22 +41,22 @@ const PublicSale = () => {
           </div>
           <div className="detail">
             0%
-            <span>7.14MSP - 1BUSD</span>
+            <span>7.14SQF - 1BUSD</span>
           </div>
         </div>
       </div>
       <div className="summary">
         <div className="item">
           <h3>$0.045</h3>
-          <span>MSP price</span>
+          <span>SQF price</span>
         </div>
         <div className="item">
           <h3>$0.045</h3>
-          <span>MSP price</span>
+          <span>SQF price</span>
         </div>
         <div className="item">
           <h3>$0.045</h3>
-          <span>MSP price</span>
+          <span>SQF price</span>
         </div>
       </div>
       <div className="box-sale">
@@ -71,12 +71,12 @@ const PublicSale = () => {
             come first serve.
           </p>
           <p>
-            Make sure that you have at least 100 BUSD in your wallet to buy MSP.
+            Make sure that you have at least 100 BUSD in your wallet to buy SQF.
           </p>
 
-          <p>Each user will be equally distributed 2222.22 MSP.</p>
+          <p>Each user will be equally distributed 2222.22 SQF.</p>
           <p>
-            Purchased MSP will be unlocked in stages in turn: 20% - 16% - 16% -
+            Purchased SQF will be unlocked in stages in turn: 20% - 16% - 16% -
             16% - 16% - 16%.
           </p>
           <p>

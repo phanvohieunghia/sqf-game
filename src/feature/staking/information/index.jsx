@@ -10,10 +10,10 @@ const Information = () => {
         <div className="left">
           <p>There are 4165 Eggs Baskets on the market.</p>
           <p>
-            Users will stake MSP Tokens in exchange for points and have a top
+            Users will stake SQF Tokens in exchange for points and have a top
             point ranking to get the right to buyEgg Baskets.
           </p>
-          <p>Each 100 $MSP for 1 hour get 10 points.</p>
+          <p>Each 100 $SQF for 1 hour get 10 points.</p>
           <p>Top 596 will buy Egg Baskets.</p>
           <p>
             Users who have more than 10 points but are not at the top will be

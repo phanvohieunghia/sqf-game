@@ -1,0 +1,19 @@
+{
+  "weapon": "weapon",
+  "head": "outfit",
+  "face": "outfit",
+  "clothes": "outfit",
+  "wing": "outfit",
+  "outfit": "outfit",
+  "necklace": "accessories",
+  "ring": "accessories",
+  "bracer": "accessories",
+  "treasure": "accessories",
+  "badge": "accessories",
+  "earrings": "accessories",
+  "stone": "materiral",
+  "forge": "materiral",
+  "holy_light": "materiral",
+  "mounts": "pet",
+  "assistant": "pet"
+}

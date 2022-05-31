@@ -1,3 +1,4 @@
+@import './valuable';
 @import './responsive';
 
 .tab {
@@ -15,7 +16,7 @@
     margin-right: 48px;
     font-size: 16px;
     text-decoration: none;
-    color: #fff;
+    color: $white-color;
   }
   .active {
     background: url('/assets/img/button2-active.png') no-repeat center center /
