@@ -6,6 +6,7 @@ import Popup from 'components/popup/comingsoon'
 import TypeItem from 'assets/data/item-type.json'
 import Items from 'assets/data/items.json'
 import detailPopupSlice from 'components/popup/detail/slice'
+import { randomPrice } from 'components/common'
 
 const OnMarket = () => {
   return (
@@ -86,7 +87,7 @@ const Item = (props) => {
           <span className="img">
             <img src={require('assets/img/coin.png')} alt="error png" />
           </span>
-          <span className="coin">380 SQF</span>
+          <span className="coin">{infor.price} SQF</span>
         </div>
         <div className="button">
           <button>

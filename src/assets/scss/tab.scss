@@ -17,10 +17,16 @@
     font-size: 16px;
     text-decoration: none;
     color: $white-color;
+    filter: drop-shadow(0 0 4px #222);
+    transition: filter 0.4s ease-in-out;
+    &:hover {
+      filter: drop-shadow(0 0 4px #fcd130);
+    }
   }
   .active {
     background: url('/assets/img/button2-active.png') no-repeat center center /
       contain;
+    filter: drop-shadow(0 0 4px #fcd130);
   }
   @include media('screen', '<tablet') {
     .tab2 {

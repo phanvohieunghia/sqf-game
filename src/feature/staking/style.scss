@@ -1,10 +1,11 @@
+@import 'assets/scss/valuable';
 @import 'assets/scss/responsive';
 
 #staking {
-  color: #fff;
+  color: $white-color;
   position: relative;
   z-index: 1;
-  
+
   .tab {
     max-width: 920px;
     margin: 40px auto 0;
@@ -22,7 +23,7 @@
       margin-right: 48px;
       font-size: 16px;
       text-decoration: none;
-      color: #fff;
+      color: $white-color;
     }
     .item.active {
       background: url('/assets/img/button2-active.png') no-repeat center center /

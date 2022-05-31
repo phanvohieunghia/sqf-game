@@ -79,7 +79,7 @@
         button {
           height: 100%;
           width: 100%;
-          color: #fff;
+          color: $white-color;
           background-color: transparent;
           border: none;
           outline: none;
@@ -96,8 +96,8 @@
         top: 50%;
         right: 20px;
         transform: translateY(-50%);
-        fill: #00abd7;
-        filter: drop-shadow(0 0 2px #00abd7);
+        fill: $orange-color;
+        filter: drop-shadow(0 0 2px $orange-color);
       }
       .rank-box {
         color: $blue-color;

@@ -5,25 +5,21 @@ import Web3 from "web3";
 import i18next from "i18next";
 
 const Config = JSON.parse(localStorage.getItem('Config'));
-const SQFSmartContractABI =Config ? Config.SQFSmartContractABI : null;
-const SQFSmartContractAddress =Config ? Config.SQFSmartContractAddress : null;
-const web3 =Config ? new Web3(Config.rpcUrl) : null;
+const SQFSmartContractABI = Config ? Config.SQFSmartContractABI : null;
+const SQFSmartContractAddress = Config ? Config.SQFSmartContractAddress : null;
+const web3 = Config ? new Web3(Config.rpcUrl) : null;
 
 export async function SQFContract() {
-
-
   const contractSQF = await new web3.eth.Contract(
     JSON.parse(SQFSmartContractABI),
     SQFSmartContractAddress,
     {}
   );
-  // console.log('contract neeeeeeeeeeeeeeeeeeee',contractSQF);
 
   return contractSQF;
 }
 
 export async function send(txHash) {
-  // console.log('hash ne',txHash);
   if (txHash) {
     const tx = await window.ethereum.request({
       method: 'eth_getTransactionReceipt',
@@ -59,37 +55,37 @@ export async function send(txHash) {
 export async function sendHash(item, txHash) {
   toast(`${i18next.t('_waiting_tx')}`);
   const interval = setInterval(function () {
-      try { 
-          web3.eth.getTransactionReceipt(txHash, async function (err, rec) {
-              if (rec) {
-                  clearInterval(interval);
-                  if (rec.status === false) {
-                      alert(`${i18next.t('_tx_fail')}`);
-                      unLoad()
-                  }
-                  else {
-                    const formData = new FormData();
-                    formData.append("itemInput",item.packageId)
-                    formData.append("type",2)
-                    formData.append("hashCode", txHash);
-                    formData.append("wallet", window.ethereum.selectedAddress);
-                    axios
-                      .post("https://api.metawar.biz/MarketPlace/BuyItemOrder", formData)
-                      .then(async (res) => {
-                        if (res.data.message) {
-                          alert(`${i18next.t('_success')}`);
-                          window.location.href = `/all-item`;
-                          unLoad()
-                        }
-                      })
-                  }
-              }
-          })
-      }
-      catch (e) { 
-          alert("Error :",e);
-      }
-      
+    try {
+      web3.eth.getTransactionReceipt(txHash, async function (err, rec) {
+        if (rec) {
+          clearInterval(interval);
+          if (rec.status === false) {
+            alert(`${i18next.t('_tx_fail')}`);
+            unLoad()
+          }
+          else {
+            const formData = new FormData();
+            formData.append("itemInput", item.packageId)
+            formData.append("type", 2)
+            formData.append("hashCode", txHash);
+            formData.append("wallet", window.ethereum.selectedAddress);
+            axios
+              .post("https://api.metawar.biz/MarketPlace/BuyItemOrder", formData)
+              .then(async (res) => {
+                if (res.data.message) {
+                  alert(`${i18next.t('_success')}`);
+                  window.location.href = `/all-item`;
+                  unLoad()
+                }
+              })
+          }
+        }
+      })
+    }
+    catch (e) {
+      alert("Error :", e);
+    }
+
   }, 1000);
 
 
@@ -98,8 +94,8 @@ export async function sendHash(item, txHash) {
 export async function handleBuyItem(item) {
 
   const formData = new FormData();
-  formData.append("itemInput",item.packageId);
-  formData.append("type",2)
+  formData.append("itemInput", item.packageId);
+  formData.append("type", 2)
   await axios
     .post("https://api.metawar.biz/MarketPlace/BuyItemHashOrder", formData)
     .then(async (res) => {
@@ -113,7 +109,7 @@ export async function handleBuyItem(item) {
 
 
 
-} 
+}
 
 
 
@@ -169,7 +165,7 @@ export async function BalanceOf() {
   const balance = await SQFContract()
     .then(async (result) => {
       let contract = result;
-      console.log('contract',contract)
+      console.log('contract', contract)
       var balance = await contract.methods['balanceOf'](window.ethereum.selectedAddress).call();
       const BN = web3.utils.BN;
       const balanceBN = new BN(balance);
@@ -178,5 +174,5 @@ export async function BalanceOf() {
       const tokens = balanceBN.div(divisor).toString();
       return tokens;
     })
-    return balance;
+  return balance;
 }

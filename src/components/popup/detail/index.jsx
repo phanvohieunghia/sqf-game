@@ -14,8 +14,6 @@ const Detail = () => {
   const selectorObj = useSelector(detailPopupSelector)
   const currentItem = selectorObj.content
   function handleDetailPopup() {
-    // mainRef.current.classList.remove('popup-detail')
-    console.log(mainRef.current.classList.add('close-popup'))
     setTimeout(() => {
       dispatch(detailPopupSlice.actions.closePopup(null))
     }, 370)
@@ -53,7 +51,7 @@ const Detail = () => {
                   <div className="price">
                     <img src={require('assets/img/coin.png')} alt="error png" />
                     <span className="primary-tex-gray font-weight-700">
-                      490 SQF
+                      {currentItem.price} SQF
                     </span>
                   </div>
                   <div className="button">

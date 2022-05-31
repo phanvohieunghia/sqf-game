@@ -24,8 +24,6 @@ import PublicSale from 'feature/vesting/public-sale'
 import Airdrop from 'feature/vesting/airdrop'
 import Presale from 'feature/vesting/presale'
 import PrivateSale from 'feature/vesting/private-sale'
-// import PublicSaleOld from 'feature/vesting/publicsale-old'
-// import ComingSoonVesting from 'feature/vesting/comingsoon'
 
 const Router = () => {
   return (
@@ -51,8 +49,6 @@ const Router = () => {
           <Route path="information" element={<InformationStaking />} />
         </Route>
         <Route path="vesting" element={<VestingPage />}>
-          {/* <Route index element={<PublicSaleOld />} />
-          <Route path="public-sale" element={<PublicSaleOld />} /> */}
           <Route index element={<PublicSale />} />
           <Route path="public-sale" element={<PublicSale />} />
           <Route path="private-sale" element={<PrivateSale />} />

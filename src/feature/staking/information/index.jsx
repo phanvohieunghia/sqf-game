@@ -8,22 +8,21 @@ const Information = () => {
       <h3>Information</h3>
       <div className="info-box">
         <div className="left">
-          <p>There are 4165 Eggs Baskets on the market.</p>
+          <p>There are 4165 Chests on the market.</p>
           <p>
             Users will stake SQF Tokens in exchange for points and have a top
-            point ranking to get the right to buyEgg Baskets.
+            point ranking to get the right to buy Chests.
           </p>
           <p>Each 100 $SQF for 1 hour get 10 points.</p>
-          <p>Top 596 will buy Egg Baskets.</p>
+          <p>Top 596 will buy Chests.</p>
           <p>
             Users who have more than 10 points but are not at the top will be
-            randomly selected 200 people to buy 4 Egg Baskets.
+            randomly selected 200 people to buy 4 Chests.
           </p>
           <p>
-            After all people on the whitelist have purchased, the remaining Egg
-            Baskets will be sold to those who come first, and will end as soon
-            as all Egg Baskets are sold out, each person only can buy 3 Egg
-            Baskets.
+            After all people on the whitelist have purchased, the remaining
+            Chests will be sold to those who come first, and will end as soon as
+            all Chests are sold out, each person only can buy 3 Chests.
           </p>
         </div>
         <div className="right">
@@ -31,9 +30,9 @@ const Information = () => {
             <thead>
               <tr>
                 <th>&nbsp;</th>
-                <th>Number of egg baskets</th>
+                <th>Number of Chests</th>
                 <th>Number of people can buy</th>
-                <th>Total egg baskets</th>
+                <th>Total Chests</th>
               </tr>
             </thead>
             <tbody>

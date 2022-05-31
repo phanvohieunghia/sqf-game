@@ -1,4 +1,3 @@
-// import { Link } from 'react-router-dom'
 import React, { useRef, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import Box from '@mui/material/Box'
@@ -56,7 +55,7 @@ const MarketPlace = () => {
               name="Type"
               onClick={() => setValueType('Weapon')}
               checked={valueType === 'Weapon'}
-            />{' '}
+            />
             Weapon
           </div>
           <div className="filter-tab-item">
@@ -66,7 +65,7 @@ const MarketPlace = () => {
               name="Type"
               onClick={() => setValueType('Outfit')}
               checked={valueType === 'Outfit'}
-            />{' '}
+            />
             Outfit
           </div>
           <div className="filter-tab-item">
@@ -76,7 +75,7 @@ const MarketPlace = () => {
               name="Type"
               onClick={() => setValueType('Accessories')}
               checked={valueType === 'Accessories'}
-            />{' '}
+            />
             Accessories
           </div>
           <div className="filter-tab-item">
@@ -86,7 +85,7 @@ const MarketPlace = () => {
               name="Type"
               onClick={() => setValueType('Materiral')}
               checked={valueType === 'Materiral'}
-            />{' '}
+            />
             Materiral
           </div>
           <div className="filter-tab-item">
@@ -96,7 +95,7 @@ const MarketPlace = () => {
               name="Type"
               onClick={() => setValueType('Pet')}
               checked={valueType === 'Pet'}
-            />{' '}
+            />
             Pet
           </div>
         </div>
@@ -105,16 +104,20 @@ const MarketPlace = () => {
           <div className="filter-tab-content">
             <div className="title">Outfit</div>
             <div className="filter-tab-item">
-              <input type="radio" value="Head" name="Outfit" /> Head
+              <input type="radio" value="Head" name="Outfit" />
+              Head
             </div>
             <div className="filter-tab-item">
-              <input type="radio" value="Face" name="Outfit" /> Face
+              <input type="radio" value="Face" name="Outfit" />
+              Face
             </div>
             <div className="filter-tab-item">
-              <input type="radio" value="Clothes" name="Outfit" /> Clothes
+              <input type="radio" value="Clothes" name="Outfit" />
+              Clothes
             </div>
             <div className="filter-tab-item">
-              <input type="radio" value="Wing" name="Outfit" /> Wing
+              <input type="radio" value="Wing" name="Outfit" />
+              Wing
             </div>
           </div>
         )}
@@ -127,17 +130,20 @@ const MarketPlace = () => {
               Necklace
             </div>
             <div className="filter-tab-item">
-              <input type="radio" value="Ring" name="Accessories" /> Ring
+              <input type="radio" value="Ring" name="Accessories" />
+              Ring
             </div>
             <div className="filter-tab-item">
-              <input type="radio" value="Bracer" name="Accessories" /> Bracer
+              <input type="radio" value="Bracer" name="Accessories" />
+              Bracer
             </div>
             <div className="filter-tab-item">
               <input type="radio" value="Treasure" name="Accessories" />
               Treasure
             </div>
             <div className="filter-tab-item">
-              <input type="radio" value="Badge" name="Accessories" /> Badges
+              <input type="radio" value="Badge" name="Accessories" />
+              Badges
             </div>
             <div className="filter-tab-item">
               <input type="radio" value="Earrings" name="Accessories" />
@@ -149,10 +155,12 @@ const MarketPlace = () => {
           <div className="filter-tab-content">
             <div className="title">Materiral</div>
             <div className="filter-tab-item">
-              <input type="radio" value="Stone" name="Materiral" /> Stone
+              <input type="radio" value="Stone" name="Materiral" />
+              Stone
             </div>
             <div className="filter-tab-item">
-              <input type="radio" value="Forge" name="Materiral" /> Forge
+              <input type="radio" value="Forge" name="Materiral" />
+              Forge
             </div>
             <div className="filter-tab-item">
               <input type="radio" value="Holy light" name="Materiral light" />
@@ -164,10 +172,12 @@ const MarketPlace = () => {
           <div className="filter-tab-content">
             <div className="title">Pet</div>
             <div className="filter-tab-item">
-              <input type="radio" value="Mounts" name="Pet" /> Mounts
+              <input type="radio" value="Mounts" name="Pet" />
+              Mounts
             </div>
             <div className="filter-tab-item">
-              <input type="radio" value="Assistant" name="Pet" /> Assistant
+              <input type="radio" value="Assistant" name="Pet" />
+              Assistant
             </div>
           </div>
         )}
@@ -207,7 +217,7 @@ const MarketPlace = () => {
                   </span>
                   <span className="infor">
                     <h4>Total volume</h4>
-                    <span className="primary-tex-yellow">161284</span>
+                    <span>161284</span>
                   </span>
                 </div>
               </div>
@@ -223,7 +233,7 @@ const MarketPlace = () => {
                   </span>
                   <span className="infor">
                     <h4>SQF price</h4>
-                    <span className="primary-tex-yellow">0.18</span>
+                    <span>0.18&nbsp;</span>
                     <span>BUSD</span>
                   </span>
                 </div>
@@ -340,12 +350,12 @@ const Item = (props) => {
           <span className="img">
             <img src={require('assets/img/coin.png')} alt="error png" />
           </span>
-          <span className="coin">380 SQF</span>
+          <span className="coin">{infor.price} SQF</span>
         </div>
         <div className="button">
           <button>
             <Popup />
-            Buy
+            Sell
           </button>
         </div>
       </div>
