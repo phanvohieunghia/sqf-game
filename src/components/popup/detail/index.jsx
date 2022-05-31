@@ -2,10 +2,12 @@ import React, { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import './style.scss'
+
 import { detailPopupSelector } from 'selectors'
 import detailPopupSlice from 'components/popup/detail/slice'
 import Popup from 'components/popup/comingsoon'
 import Icons from 'assets/icons'
+
 const Detail = () => {
   const mainRef = useRef(null)
   const dispatch = useDispatch()
@@ -35,13 +37,11 @@ const Detail = () => {
               <Icons.XMark height={'16'} />
             </div>
             <div className="title-box">
-              <div className="container">
-                <h3>{currentItem.name}</h3>
-              </div>
+              <h3 className="detail-name primary-tex-red">{currentItem.name}</h3>
             </div>
             <div className="box-detail">
-              <div className="container">
-                <div className="left">
+              <div className="container row">
+                <div className="left col-xl-5 col-12">
                   <div className="img">
                     <img
                       src={require(`assets/img/items/${currentItem.path}`)}
@@ -50,7 +50,7 @@ const Detail = () => {
                   </div>
                   <div className="price">
                     <img src={require('assets/img/coin.png')} alt="error png" />
-                    <span>490 MSP</span>
+                    <span className="primary-tex-gray font-weight-700">490 MSP</span>
                   </div>
                   <div className="button">
                     <button>
@@ -59,12 +59,12 @@ const Detail = () => {
                     </button>
                   </div>
                 </div>
-                <div className="right">
-                  <h3>About</h3>
+                <div className="right col-xl-7 col-12">
+                  <h3 className="primary-tex-yellow">About</h3>
                   <div className="content">
                     <div className="item">
                       <label>Owner: </label>
-                      <div className="text">
+                      <div className="text ref primary-tex-yellow">
                         0x490b448ecd1d6609a506dc7cd14966ed0fe888c6
                       </div>
                     </div>
@@ -73,7 +73,7 @@ const Detail = () => {
                       <span>#{currentItem.id}</span>
                     </div>
                   </div>
-                  <h3>Description</h3>
+                  <h3 className="primary-tex-yellow">Description</h3>
                   <div className="content">
                     <div className="description">
                       {currentItem.introduction}

@@ -48,9 +48,12 @@
       }
     }
     .filter {
-      margin: 15px auto 10px;
-      max-width: 1192px;
-      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      &-title{
+        margin-right: 12px;
+      }
       label {
         font-size: 18px;
         color: #fff;
@@ -114,6 +117,25 @@
           right: 5px;
         }
       }
+      &-icon{
+        border-radius: 10px;
+        border: 1px solid #fff;
+        background-color: rgba(0, 71, 85, 0.6);
+        height: 38px;
+        width: 38px;
+        display: flex;
+        margin-left: 12px;
+
+        &:hover{
+          cursor: pointer;
+        }
+
+        i{
+          margin:auto;
+          font-size: 20px;
+          color: #fff;
+        }
+      }
     }
     .list-item {
       .container .row .item {
@@ -129,7 +151,7 @@
           text-decoration: none;
           cursor: pointer;
           border: 2px solid $white-color;
-          min-height: 435px;
+          // min-height: 435px;
 
           &:hover {
             box-shadow: inset 30px 0 60px rgb(86 132 190 / 65%),
@@ -194,16 +216,21 @@
           .information {
             padding-left: 12px;
             line-height: 26px;
+            min-height: 160px;
             .info-item {
               font-size: 13px;
               margin-bottom: 10px;
               color: $white-color;
+              display: flex;
               label {
                 padding-left: 8px;
                 font-weight: 700;
               }
               span {
                 padding-left: 8px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
               }
             }
           }
@@ -250,6 +277,8 @@
       }
     }
   }
+
+  
   @include media('screen', '<laptop') {
     .main {
       .summary {
@@ -321,3 +350,6 @@
     }
   }
 }
+
+
+

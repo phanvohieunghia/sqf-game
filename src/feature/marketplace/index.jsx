@@ -1,5 +1,5 @@
 // import { Link } from 'react-router-dom'
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect,useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 // MUI
@@ -16,7 +16,15 @@ import Popup from 'components/popup/comingsoon'
 
 const MarketPlace = () => {
 
-   // Handle Modal Nav Moible
+   // Handle Modal Nav Filter
+
+    const [valueType,setValueType] = useState("Weapon")
+
+    const onChangeValue = (event) => {
+      console.log(event.target.value);
+    }
+
+
     const [stateNav, setStateNav] = React.useState({
         top: false,
         left: false,
@@ -28,84 +36,153 @@ const MarketPlace = () => {
         <Box
           sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
           role="presentation"
-          onClick={toggleDrawerNav(anchor, false)}
+          // onClick={toggleDrawerNav(anchor, false)}
           onKeyDown={toggleDrawerNav(anchor, false)}
         >
-            <div>
-                <div className="cart-title">
-                    <div className=" nav-logo">
-                       <img src="/images/logo.png" alt="" />
-                    </div>
-                    <div className="cart-title-close">
-                        <button className="clear-btn">
-                            <i className="fa-solid fa-circle-xmark"></i>
-                        </button>
-                    </div>
+            <div className="filter-tab">
+              <div className="closebtn" onClick={toggleDrawerNav(anchor, false)}>
+                <Icons.XMark height={'16'} />
+              </div>
+              <div className="filter-tab-content">
+                <div className="title ">
+                  Properties
                 </div>
-            </div>
-            <Divider />
-            <div className="tempty-title" >
-                <a href="https://google.com" className="nav-item">
-                    <div className="nav-item-name active" >
-                        Home
-                    </div>
-                </a>
-            </div>
+                <div className="filter-tab-item">
+                  <input type="radio" value="Common" name="Properties"/> Common
+                </div>
+                <div className="filter-tab-item">
+                  <input type="radio" value="Rare" name="Properties" /> Rare
+                </div>
+                <div className="filter-tab-item">
+                  <input type="radio" value="Epic" name="Properties" /> Epic
+                </div>
+                <div className="filter-tab-item">
+                  <input type="radio" value="Legendary" name="Properties" /> Legendary
+                </div>
+              </div>
 
-            <div className="tempty-title" >
-                <a href="https://google.com" className="nav-item">
-                    <div className="nav-item-name" >
-                        Marketplace
-                    </div>
-                </a>
-            </div>
+              <div className="filter-tab-content">
+                <div className="title">
+                  Type
+                </div>
+                <div className="filter-tab-item">
+                  <input type="radio" value="Weapon" name="Type" onClick={() => setValueType("Weapon")} checked={valueType=="Weapon"}/> Weapon
+                </div>
+                <div className="filter-tab-item">
+                  <input type="radio" value="Outfit" name="Type" onClick={() => setValueType("Outfit")} checked={valueType=="Outfit"}/> Outfit
+                </div>
+                <div className="filter-tab-item">
+                  <input type="radio" value="Accessories" name="Type" onClick={() => setValueType("Accessories")} checked={valueType=="Accessories"}/> Accessories
+                </div>
+                <div className="filter-tab-item">
+                  <input type="radio" value="Materiral" name="Type" onClick={() => setValueType("Materiral")} checked={valueType=="Materiral"}/> Materiral
+                </div>
+                <div className="filter-tab-item">
+                  <input type="radio" value="Pet" name="Type" onClick={() => setValueType("Pet")} checked={valueType=="Pet"}/> Pet
+                </div>
+              </div>
 
-             <div className="tempty-title" >
-                <a href="https://google.com" className="nav-item">
-                    <div className="nav-item-name" >
-                        Whitepaper
-                    </div>
-                </a>
-            </div>
+              {
+                valueType === "Outfit"
 
-            {/* <div className="tempty-title" >
-                <a href="https://google.com" className="nav-item">
-                    <div className="nav-item-name">
-                        News
+                &&
+                (
+                  <div className="filter-tab-content">
+                    <div className="title">
+                      Outfit
                     </div>
-                </a>
-            </div> */}
+                    <div className="filter-tab-item">
+                      <input type="radio" value="Head" name="Outfit" /> Head
+                    </div>
+                    <div className="filter-tab-item">
+                      <input type="radio" value="Face" name="Outfit" /> Face
+                    </div>
+                    <div className="filter-tab-item">
+                      <input type="radio" value="Clothes" name="Outfit" /> Clothes
+                    </div>
+                    <div className="filter-tab-item">
+                      <input type="radio" value="Wing" name="Outfit" /> Wing
+                    </div>
+                  </div>
+                )
+              }
 
-            <div className="tempty-title">
-                <a href="https://google.com" className="nav-item">
-                    <div className="nav-item-name">
-                        Event
-                    </div>
-                </a>
-            </div>
+              {
+                valueType === "Accessories"
 
-            <div className="tempty-title">
-                <a href="https://google.com" className="nav-item">
-                    <div className="nav-item-name">
-                        Sign up
-                    </div>
-                </a>
-            </div>
+                &&
 
-            <div className="tempty-title">
-                <a href="https://google.com" className="nav-item">
-                    <div className="nav-item-name nav-item-name--primary">
-                        Play Game
+                (
+                  <div className="filter-tab-content">
+                    <div className="title">
+                      Accessories
                     </div>
-                </a>
-            </div>
+                    <div className="filter-tab-item">
+                      <input type="radio" value="Necklace" name="Accessories" /> Necklace
+                    </div>
+                    <div className="filter-tab-item">
+                      <input type="radio" value="Ring" name="Accessories" /> Ring
+                    </div>
+                    <div className="filter-tab-item">
+                      <input type="radio" value="Bracer" name="Accessories" /> Bracer
+                    </div>
+                    <div className="filter-tab-item">
+                      <input type="radio" value="Treasure" name="Accessories" /> Treasure
+                    </div>
+                    <div className="filter-tab-item">
+                      <input type="radio" value="Badge" name="Accessories" /> Badges
+                    </div>
+                    <div className="filter-tab-item">
+                      <input type="radio" value="Earrings" name="Accessories" /> Earrings
+                    </div>
+                  </div>
+                )
+              }
 
-            <div className="tempty-title">
-                <a href="https://google.com" className="nav-item">
-                    <div className="nav-item-name nav-item-name--primary">
-                        Wallet Connect
+              {
+                valueType === "Materiral"
+
+                &&
+
+                (
+                  <div className="filter-tab-content">
+                    <div className="title">
+                      Materiral
                     </div>
-                </a>
+                    <div className="filter-tab-item">
+                      <input type="radio" value="Stone" name="Materiral" /> Stone
+                    </div>
+                    <div className="filter-tab-item">
+                      <input type="radio" value="Forge" name="Materiral" /> Forge
+                    </div>
+                    <div className="filter-tab-item">
+                      <input type="radio" value="Holy light" name="Materiral light" /> Holy light
+                    </div>
+                  </div>
+                )
+
+              }
+
+              {
+                valueType === "Pet"
+
+                &&
+
+                (
+                  <div className="filter-tab-content">
+                    <div className="title">
+                      Pet
+                    </div>
+                    <div className="filter-tab-item">
+                      <input type="radio" value="Mounts" name="Pet" /> Mounts
+                    </div>
+                    <div className="filter-tab-item">
+                      <input type="radio" value="Assistant" name="Pet" /> Assistant
+                    </div>
+                  </div>
+                )
+              }
+
             </div>
         </Box>
     );
@@ -124,11 +201,11 @@ const MarketPlace = () => {
 
         {/* Modal Nav Mobile Menu*/}
         <Drawer
-            anchor={'left'}
-            open={stateNav['left']}
-            onClose={toggleDrawerNav('left', false)}
+            anchor={'right'}
+            open={stateNav['right']}
+            onClose={toggleDrawerNav('right', false)}
         >
-            {modalCartNav('left')}
+            {modalCartNav('right')}
         </Drawer>
 
         <div className="summary container">
@@ -165,20 +242,29 @@ const MarketPlace = () => {
           </div>
         </div>
 
-        <div className="filter">
-          <div className="filter-title primary-tex-gray font-weight-700 font-size-18" onClick={toggleDrawerNav('left', true)}>
-            Filter
-          </div>
-          <div className="select">
-            <Icons.AngleDown height={'10'} />
-            <select>
-              <option value="lowest">Lowest Price</option>
-              <option value="highest">Highest Price</option>
-            </select>
-          </div>
-          <div className="input">
-            <input type="text" placeholder="Egg basket ID" />
-            <img src={require('assets/img/search.png')} alt="error png" />
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-12">
+              <div className="filter">
+                <div className="filter-title primary-tex-gray font-weight-700 font-size-18" onClick={toggleDrawerNav('right', true)}>
+                  Filter
+                </div>
+                <div className="select">
+                  <Icons.AngleDown height={'10'} />
+                  <select>
+                    <option value="lowest">Lowest Price</option>
+                    <option value="highest">Highest Price</option>
+                  </select>
+                </div>
+                <div className="input">
+                  <input type="text" placeholder="Egg basket ID" />
+                  <img src={require('assets/img/search.png')} alt="error png" />
+                </div>
+                <div className="filter-icon" onClick={toggleDrawerNav('right', true)}>
+                  <i class="fa-solid fa-filter"></i>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="list-item">
