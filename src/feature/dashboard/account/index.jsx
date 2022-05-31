@@ -2,14 +2,36 @@ import React,{useState, useEffect} from 'react'
 
 import './style.scss'
 import Icons from 'assets/icons'
+import { connectWallet } from 'utils/connectWallet';
+import { getBalance } from 'utils/Wallet';
 
 
 const Account = () => {
-  const [copied,setCopied] = useState(false)
+  const [copied,setCopied] = useState(false);
+  const [account,setAccount] = useState("0x0000000000000000000000000000000000000000");
+  const [balance,setBalance] = useState(0);
+  const [availBalance,setAvailBalance] = useState(0);
+  const [lockedBalance,setLockedBalance] = useState(0);
+
+  useEffect(() => {
+    async function load() {
+      const account = await connectWallet();
+      const balance = await getBalance();
+      if(balance.balance && balance.availBalance)  { 
+        const lockedToken = balance.balance - balance.availBalance;
+        setLockedBalance(lockedToken);
+      }
+      setAccount(account);
+      setBalance(balance.balance);
+      setAvailBalance(balance.availBalance);
+
+    }
+    load();
+  }, []);
 
   const valuable = {
-    address: '0x307e415778f2aa486e20387a8ecddf69c68783fe',
-    reference_link: 'https://sqf-gunbow.vercel.app',
+    address: account,
+    reference_link: `https://www.sqfgame.com/${account}`,
   }
 
   useEffect(() => {
@@ -37,45 +59,38 @@ const Account = () => {
         <div className="content">
           <div className="content-wrap">
 
-            <div className="item">
+            {/* <div className="item">
               <label>Total token buy:</label>
               <div className="item-content">
                 <span className="primary-tex-yellow">0</span>
                 <span className="unit primary-tex-gray"> SQF</span>  
               </div>
-            </div>
+            </div> */}
 
             <div className="item">
               <label>Balance:</label>
               <div className="item-content">
-                <span className="primary-tex-yellow">0</span>
+                <span className="primary-tex-yellow"> {balance} </span>
                 <span className="unit primary-tex-gray"> SQF</span>  
               </div>
             </div>
 
             <div className="item">
-              <label>Ablance Available:</label>
+              <label>Balance Available:</label>
               <div className="item-content">
-                <span className="primary-tex-yellow">0</span>
+                <span className="primary-tex-yellow"> {availBalance} </span>
                 <span className="unit primary-tex-gray"> SQF</span>  
               </div>
             </div>
 
             <div className="item">
-              <label>Unlock Percent:</label>
+              <label>Locked Token:</label>
               <div className="item-content">
-                <span className="primary-tex-yellow">0</span>
-                <span className="unit primary-tex-gray"> %</span>  
+                <span className="primary-tex-yellow">{lockedBalance}</span>
+                <span className="unit primary-tex-gray">SQF</span>  
               </div>
             </div>
 
-            <div className="item">
-              <label>Claimed Percent:</label>
-              <div className="item-content">
-                <span className="primary-tex-yellow">0</span>
-                <span className="unit primary-tex-gray"> %</span>  
-              </div>
-            </div>
 
             <div className="item2" >
               <label>Address:</label>

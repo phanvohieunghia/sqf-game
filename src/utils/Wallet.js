@@ -1,8 +1,8 @@
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import axios from "axios";
-import { Load, unLoad } from "./Loader";
+// import { Load, unLoad } from "./Loader";
 import Web3 from "web3";
-import i18next from "i18next";
+// import i18next from "i18next";
 
 
 const Config = JSON.parse(localStorage.getItem('Config'));
@@ -81,52 +81,54 @@ export async function approve(values) {
 }
 
 
-export async function getBuyedToken() { 
-    const contractPreSale = await preSaleContract();
-    var buyedToken = await contractPreSale.methods['buyedToken'](window.ethereum.selectedAddress).call();
-    var buyed = await web3.utils.fromWei(buyedToken, 'ether');
-    return buyed;
-}
+// export async function getBuyedToken() { 
+//     const contractPreSale = await preSaleContract();
+//     var buyedToken = await contractPreSale.methods['buyedToken'](window.ethereum.selectedAddress).call();
+//     var buyed = await web3.utils.fromWei(buyedToken, 'ether');
+//     return buyed;
+// }
 
-export async function getUnlockPercent() {
-    const contractPreSale = await preSaleContract();
-    var unlockPercent = await contractPreSale.methods['checkTimeUnlockPercent']().call();
-    var claimedPercent = await contractPreSale.methods['claimedPercent'](window.ethereum.selectedAddress).call();
-    return { unlockPercent, claimedPercent };
-}
+// export async function getUnlockPercent() {
+//     const contractPreSale = await preSaleContract();
+//     var unlockPercent = await contractPreSale.methods['checkTimeUnlockPercent']().call();
+//     var claimedPercent = await contractPreSale.methods['claimedPercent'](window.ethereum.selectedAddress).call();
+//     return { unlockPercent, claimedPercent };
+// }
 
-export async function claimToken() {
-    Load()
-    if (window.ethereum && window.ethereum.selectedAddress) {
-        const contractPreSale = await preSaleContract();
-        // var claim = await contractPreSale.methods['unlockToken']().send({ from: window.ethereum.selectedAddress });
-        var data = await contractPreSale.methods['unlockToken']().encodeABI();
-        const transactionParameters = {
-            nonce: '0x00', // ignored by MetaMask
-            // gasPrice: '0x09184e72a000', // customizable by user during MetaMask confirmation.
-            // gas: gas, // customizable by user during MetaMask confirmation.
-            to: preSaleContractAddress, // Required except during contract publications.
-            from: window.ethereum.selectedAddress, // must match user's active address.
-            // value: web3.utils.toHex(number), // Only required to send ether to the recipient from the initiating external account.
-            data: data,
-            chainId: web3.utils.toHex(56), // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask.
-        };
-        const txHash = await window.ethereum.request({
-            method: 'eth_sendTransaction',
-            params: [transactionParameters],
-        }).then(async res => { 
-             await waitClaim(res);
-        });
-        return txHash;
-    }
+// export async function claimToken() {
+//     // Load()
+//     if (window.ethereum && window.ethereum.selectedAddress) {
+//         const contractPreSale = await preSaleContract();
+//         // var claim = await contractPreSale.methods['unlockToken']().send({ from: window.ethereum.selectedAddress });
+//         var data = await contractPreSale.methods['unlockToken']().encodeABI();
+//         const transactionParameters = {
+//             nonce: '0x00', // ignored by MetaMask
+//             // gasPrice: '0x09184e72a000', // customizable by user during MetaMask confirmation.
+//             // gas: gas, // customizable by user during MetaMask confirmation.
+//             to: preSaleContractAddress, // Required except during contract publications.
+//             from: window.ethereum.selectedAddress, // must match user's active address.
+//             // value: web3.utils.toHex(number), // Only required to send ether to the recipient from the initiating external account.
+//             data: data,
+//             chainId: web3.utils.toHex(56), // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask.
+//         };
+//         const txHash = await window.ethereum.request({
+//             method: 'eth_sendTransaction',
+//             params: [transactionParameters],
+//         }).then(async res => { 
+//              await waitClaim(res);
+//         });
+//         return txHash;
+//     }
 
-}
+// }
 
 export async function getBalance() {
     if (window.ethereum && window.ethereum.selectedAddress) {
         const contractSQF = await SQFContract();
+        const contractBUSD = await BUSDContract();
         var availBalance18 = await contractSQF.methods['availableBalance'](window.ethereum.selectedAddress).call();
         var balance18 = await contractSQF.methods['balanceOf'](window.ethereum.selectedAddress).call();
+        var balanceBUSD18 = await contractBUSD.methods['balanceOf'](window.ethereum.selectedAddress).call();
         // const BN = web3.utils.BN;
         // const balanceBN = new BN(balance);
         // const decimalsBN = new BN(18);
@@ -134,62 +136,63 @@ export async function getBalance() {
         // const tokens = balanceBN.div(divisor).toString();
         const balance = await web3.utils.fromWei(balance18, "ether");
         const availBalance = await web3.utils.fromWei(availBalance18, "ether");
-        return { balance: Number(balance).toFixed(3), availBalance: Number(availBalance).toFixed(3) };
+        const balanceBUSD = await web3.utils.fromWei(balanceBUSD18, "ether");
+        return { balance: Number(balance).toFixed(3), availBalance: Number(availBalance).toFixed(3), balanceBUSD: Number(balanceBUSD).toFixed(6) };
     }
 }
 
-export async function waitTx(hash) {
-    toast(`${i18next.t('_waiting_tx')}`);
-    let status;
-    const interval =await setInterval(function () {
-        try {
-            web3.eth.getTransactionReceipt(hash, async function (err, rec) {
-                if (rec) {
-                    clearInterval(interval);
-                    if (rec.status === false) {
-                        alert(`${i18next.t('_tx_fail')}`);
-                        unLoad();
-                        return status = false;
-                    }
-                    else {
-                        alert(`${i18next.t('_success')}`);
-                        unLoad()     
-                        return status = true;               
-                    }
-                }
-            })
-        }
-        catch (e) {
-            alert("Error :", e);
-        }
-    }, 1000);
-    return status;
-}
+// export async function waitTx(hash) {
+//     // toast(`${i18next.t('_waiting_tx')}`);
+//     let status;
+//     const interval =await setInterval(function () {
+//         try {
+//             web3.eth.getTransactionReceipt(hash, async function (err, rec) {
+//                 if (rec) {
+//                     clearInterval(interval);
+//                     if (rec.status === false) {
+//                         alert(`${i18next.t('_tx_fail')}`);
+//                         // unLoad();
+//                         return status = false;
+//                     }
+//                     else {
+//                         alert(`${i18next.t('_success')}`);
+//                         // unLoad()     
+//                         return status = true;               
+//                     }
+//                 }
+//             })
+//         }
+//         catch (e) {
+//             alert("Error :", e);
+//         }
+//     }, 1000);
+//     return status;
+// }
 
-export async function waitClaim(hash) {
-    toast(`${i18next.t('_waiting_tx')}`);
-    const interval = setInterval(function () {
-        try {
-            web3.eth.getTransactionReceipt(hash, async function (err, rec) {
-                if (rec) {
-                    clearInterval(interval);
-                    if (rec.status === false) {
-                        alert(`${i18next.t('_claim_fail')}`);
-                        // unLoad()
-                        window.location.href = "/account"
-                        // return false;
-                    }
-                    else {
-                        alert(`${i18next.t('_claim_successfully')}`);
-                        window.location.href = "/account"
-                        // unLoad()                    
-                        // return true;
-                    }
-                }
-            })
-        }
-        catch (e) {
-            alert("Error :", e);
-        }
-    }, 1000);
-}
+// export async function waitClaim(hash) {
+//     // toast(`${i18next.t('_waiting_tx')}`);
+//     const interval = setInterval(function () {
+//         try {
+//             web3.eth.getTransactionReceipt(hash, async function (err, rec) {
+//                 if (rec) {
+//                     clearInterval(interval);
+//                     if (rec.status === false) {
+//                         alert(`${i18next.t('_claim_fail')}`);
+//                         // unLoad()
+//                         window.location.href = "/account"
+//                         // return false;
+//                     }
+//                     else {
+//                         alert(`${i18next.t('_claim_successfully')}`);
+//                         window.location.href = "/account"
+//                         // unLoad()                    
+//                         // return true;
+//                     }
+//                 }
+//             })
+//         }
+//         catch (e) {
+//             alert("Error :", e);
+//         }
+//     }, 1000);
+// }

@@ -39,6 +39,16 @@ header {
     color: $white-color;
     font-size: 18px;
   }
+  .account {
+    background: url('/assets/img/my_account.png') no-repeat center / contain;
+    margin: 8px 15px 8px 0;
+    width: 146px;
+    height: 46px;
+    line-height: 40px;
+    text-align: center;
+    color: $white-color;
+    font-size: 18px;
+  }
   @include media('screen', '<laptop') {
     flex-direction: column;
     align-items: center;
