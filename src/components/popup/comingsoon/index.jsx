@@ -1,34 +1,30 @@
-import React, { useCallback, useEffect, useRef, useState, memo } from 'react'
+import React, { memo } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import './style.scss'
+import { showPopupSelector } from 'selectors'
+import globalSilce from 'reducers/globalSlice'
 
-const Popup = ({ content }) => {
-  const mainRef = useRef(null)
-  const [state, setState] = useState(false)
-  const handlePopup = (e) => {
-    e.stopPropagation()
-    e.preventDefault()
-    setState(!state)
-  }
-  const handleState = useCallback(() => {
-    setState(!state)
-  }, [state])
-  useEffect(() => {
-    mainRef.current.parentElement.style.position = 'relative'
-  }, [])
-  return (
-    <div id="popup" onClick={handlePopup} ref={mainRef}>
-      {state && <PopupContent content={content} onState={handleState} />}
-    </div>
-  )
-}
-const PopupContent = memo(({ content = 'COMING SOON!', onState }) => {
-  useEffect(() => {
+const ComingSoon = () => {
+  const state = useSelector(showPopupSelector)
+  const dispatch = useDispatch()
+  function closePopup() {
     const timeoutId = setTimeout(() => {
-      onState()
+      dispatch(globalSilce.actions.showPopup(false))
       return () => clearTimeout(timeoutId)
     }, 1900)
-  }, [onState])
-  return <div className="popup">{content}</div>
-})
-export default Popup
+  }
+
+  return (
+    <>
+      {state && (
+        <>
+          <div id="popup-comingsoon">COMING SOON!</div>
+          {closePopup()}
+        </>
+      )}
+    </>
+  )
+}
+
+export default memo(ComingSoon)

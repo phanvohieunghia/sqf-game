@@ -8,7 +8,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'assets/scss/index.scss';
-// import './assets/scss/responsiveFFF.scss'
+import './assets/scss/responsiveFFF.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

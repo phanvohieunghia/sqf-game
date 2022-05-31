@@ -21,9 +21,10 @@
       line-height: 48px;
       margin-left: 48px;
       margin-right: 48px;
-      font-size: 16px;
+      font-size: 1.6rem;
       text-decoration: none;
       color: $white-color;
+      font-weight: 700;
     }
     .item.active {
       background: url('/assets/img/button2-active.png') no-repeat center center /

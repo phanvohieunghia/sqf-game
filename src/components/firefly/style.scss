@@ -27,7 +27,8 @@
   transform-origin: -10vw;
 }
 .firefly::before {
-  background: black;
+  // background: black;
+  background: rgba(0, 0, 0, 0.199);
   opacity: 0.4;
   animation: drift ease alternate infinite;
 }

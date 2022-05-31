@@ -18,7 +18,7 @@
   animation: show-detail-popup-main 0.4s ease-in-out;
   .detail-name {
     text-align: center;
-    font-size: 40px;
+    font-size: 4rem;
     padding-bottom: 30px;
     border-bottom: 2px solid #fff;
   }
@@ -53,17 +53,16 @@
       .container {
         width: 920px;
         h3 {
-          font-size: 42px;
+          font-size: 4.2rem;
           font-weight: 700;
           margin-bottom: 0;
           margin-left: 20px;
         }
         .level {
-          font-size: 20px;
+          font-size: 2rem;
         }
       }
     }
-
     .box-detail {
       margin-bottom: 40px;
       .container {
@@ -72,9 +71,6 @@
         align-items: center;
         .left {
           text-align: center;
-          // margin-right: 40px;
-          // margin-left: 20px;
-
           .img {
             img {
               width: 200px;
@@ -90,7 +86,7 @@
             }
             span {
               color: $white-color;
-              font-size: 18px;
+              font-size: 1.8rem;
               padding-left: 8px;
             }
           }
@@ -118,7 +114,7 @@
               background-color: transparent;
               border: none;
               outline: none;
-              font-size: 14px;
+              font-size: 1.4rem;
               text-shadow: 1px 1px 2px #000;
               display: flex;
               align-items: center;
@@ -131,7 +127,7 @@
           // flex-basis: 50%;
           h3 {
             font-weight: 700;
-            font-size: 26px;
+            font-size: 2.6rem;
             margin: 20px 0 8px;
             margin-left: 0;
           }
@@ -142,14 +138,14 @@
             padding: 8px 12px;
             font-weight: 500;
             .description {
-              font-size: 18px;
+              font-size: 1.8rem;
             }
             hr {
               height: 2px;
             }
             .item {
               margin-bottom: 16px;
-              font-size: 18px;
+              font-size: 1.8rem;
               label {
                 color: #bbbdbf;
               }

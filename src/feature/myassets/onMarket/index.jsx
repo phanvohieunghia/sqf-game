@@ -2,11 +2,10 @@ import React, { useRef, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 import './style.scss'
-import Popup from 'components/popup/comingsoon'
+import Popup from 'components/popup/comingsoon-old'
 import TypeItem from 'assets/data/item-type.json'
 import Items from 'assets/data/items.json'
 import detailPopupSlice from 'components/popup/detail/slice'
-import { randomPrice } from 'components/common'
 
 const OnMarket = () => {
   return (

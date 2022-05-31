@@ -5,9 +5,10 @@ import './style.scss'
 import Sidebar from 'components/sidebar'
 import SidebarMobile from 'components/sidebar-mobile'
 import Header from 'components/header'
-// import Firefly from 'components/firefly'
+import Firefly from 'components/firefly'
 import MenuMobile from 'components/menu-mobile'
 import DetailPopup from 'components/popup/detail'
+import ComingSoon from 'components/popup/comingsoon'
 
 const Layout = () => {
   return (
@@ -15,15 +16,11 @@ const Layout = () => {
       {window.innerWidth >= 1024 && <Sidebar />}
       {window.innerWidth < 1024 && <SidebarMobile />}
       {window.innerWidth < 1024 && <MenuMobile />}
-      <DetailPopup />
       <main>
-        {/* <Firefly /> */}
-        {/* {window.innerWidth < 1024 && (
-          <div className="logo">
-            <img src={require('assets/img/logo.png')} alt="error png" />
-          </div>
-        )} */}
+        <DetailPopup />
+        <Firefly />
         <Header />
+        <ComingSoon />
         <Outlet />
       </main>
     </>
