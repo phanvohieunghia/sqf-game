@@ -25,7 +25,7 @@
         margin-bottom: 16px;
         font-size: 1.6rem;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         &:first-child {
           margin-top: 16px;
         }
@@ -40,6 +40,7 @@
           display: flex;
           flex-basis: 100px;
           font-weight: 700;
+          flex: 1;
           .number {
             @include yelow-gradient-color;
             flex-grow: 1;
@@ -53,7 +54,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 50%;
+        width: 80%;
         font-size: 1.8rem;
         background-color: #59070bc9;
         border: 2px solid $orange-color;
@@ -92,10 +93,26 @@
         }
       }
     }
+    .wallet-box {
+      width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      .item {
+        align-items: flex-end;
+      }
+    }
     @include media('screen', '<laptop') {
       .account-box {
         .item2 {
           width: 100%;
+        }
+      }
+      .wallet-box {
+        width: 100%;
+        .item {
+          .number {
+            text-align: right;
+          }
         }
       }
     }

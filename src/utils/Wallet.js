@@ -1,5 +1,5 @@
 // import { toast } from "react-toastify";
-import axios from "axios";
+// import axios from "axios";
 // import { Load, unLoad } from "./Loader";
 import Web3 from "web3";
 // import i18next from "i18next";
@@ -156,8 +156,8 @@ export async function getBalance() {
 //                     }
 //                     else {
 //                         alert(`${i18next.t('_success')}`);
-//                         // unLoad()     
-//                         return status = true;               
+//                         // unLoad()
+//                         return status = true;
 //                     }
 //                 }
 //             })
@@ -185,7 +185,7 @@ export async function getBalance() {
 //                     else {
 //                         alert(`${i18next.t('_claim_successfully')}`);
 //                         window.location.href = "/account"
-//                         // unLoad()                    
+//                         // unLoad()
 //                         // return true;
 //                     }
 //                 }

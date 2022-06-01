@@ -1,8 +1,8 @@
-import Web3 from "web3";
-const Config = JSON.parse(localStorage.getItem('Config'));
-const chainId = Config ? Config.chainId : null;
-const netWork = Config ? Config.netWork : null;
-const web3 = Config ? new Web3(Config.rpcUrl) : null;
+// import Web3 from "web3";
+// const Config = JSON.parse(localStorage.getItem('Config'));
+// const chainId = Config ? Config.chainId : null;
+// const netWork = Config ? Config.netWork : null;
+// const web3 = Config ? new Web3(Config.rpcUrl) : null;
 
 export async function listenEvent() {
 
@@ -23,7 +23,7 @@ export async function listenEvent() {
 export async function connectWallet() {
   if (window.ethereum) {
     await window.ethereum.request({ method: "eth_requestAccounts" });
-    const metamaskChainId = web3.utils.toBN(window.ethereum.chainId).toNumber()
+    // const metamaskChainId = web3.utils.toBN(window.ethereum.chainId).toNumber()
     // console.log(window.ethereum.selectedAddress);
     // if (metamaskChainId !== chainId) {
     //   alert(`Wrong network, select ${netWork} and try again!`);

@@ -68,26 +68,27 @@ const Account = () => {
   return (
     <div className="account container">
       <h3 className="primary-tex-yellow">My Wallet</h3>
-      <div className="account-box">
+      <div className="account-box wallet-box">
         <div className="item">
           <label>Balance:</label>
           <div className="content">
             <span className="number"> {balance} </span>
-            <span className="unit"> SQF</span>
+            <span className="unit">&nbsp;SQF</span>
           </div>
         </div>
         <div className="item">
           <label>Balance Available:</label>
           <div className="content">
             <span className="number"> {availBalance} </span>
-            <span className="unit"> SQF</span>
+
+            <span className="unit">&nbsp;SQF</span>
           </div>
         </div>
         <div className="item">
           <label>Locked Token:</label>
           <div className="content">
             <span className="number">{lockedBalance}</span>
-            <span className="unit">SQF</span>
+            <span className="unit">&nbsp;SQF</span>
           </div>
         </div>
         <div className="item2" onClick={() => handleCopyClipboard('address')}>
