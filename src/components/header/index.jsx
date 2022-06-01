@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import './style.scss'
 import { connectWallet } from 'utils/connectWallet'
 import { getBalance } from 'utils/Wallet'
-import Popup from 'components/popup/comingsoon-button'
+// import Popup from 'components/popup/comingsoon-button'
 
 const Header = () => {
   const [account, setAccount] = useState(false)
@@ -41,7 +41,7 @@ const Header = () => {
       </div>
       {account ? (
         <a href="/" className="account">
-          <Popup />
+          {/* <Popup /> */}
         </a>
       ) : (
         <a href="/" className="button">

@@ -23,7 +23,9 @@ function RenderItemList() {
   return (
     <div className="row">
       {Items.map((item) => {
-        return <Item infor={item} type={refObj.current[item.type]} />
+        return (
+          <Item infor={item} type={refObj.current[item.type]} key={item.id} />
+        )
       })}
     </div>
   )

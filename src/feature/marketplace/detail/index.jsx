@@ -29,10 +29,10 @@ const Detail = () => {
         <div className="container">
           <div className="left">
             <div className="img">
-              <img
+              {/* <img
                 src={require('assets/img/item-detail.png')}
                 alt="error png"
-              />
+              /> */}
             </div>
             <div className="price">
               <img src={require('assets/img/coin.png')} alt="error png" />
