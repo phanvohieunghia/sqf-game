@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 import './style.scss'
-import Popup from 'components/popup/comingsoon-old'
+import Popup from 'components/popup/comingsoon-button'
 import TypeItem from 'assets/data/item-type.json'
 import Items from 'assets/data/items.json'
 import detailPopupSlice from 'components/popup/detail/slice'

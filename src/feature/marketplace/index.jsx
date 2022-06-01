@@ -8,7 +8,7 @@ import Pagination from 'components/pagination'
 import Icons from 'assets/icons'
 import Items from 'assets/data/items.json'
 import detailPopupSlice from 'components/popup/detail/slice'
-import Popup from 'components/popup/comingsoon-old'
+import Popup from 'components/popup/comingsoon-button'
 import TypeItem from 'assets/data/item-type.json'
 
 const MarketPlace = () => {

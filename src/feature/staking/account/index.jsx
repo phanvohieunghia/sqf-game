@@ -2,7 +2,7 @@ import React from 'react'
 
 import './style.scss'
 import Icons from 'assets/icons'
-import Popup from 'components/popup/comingsoon-old'
+import Popup from 'components/popup/comingsoon-button'
 
 const Account = () => {
   return (

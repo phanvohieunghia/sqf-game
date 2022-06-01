@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './style.scss'
-import Popup from 'components/popup/comingsoon-old'
+import Popup from 'components/popup/comingsoon-button'
 
 const NFTs = () => {
   return (

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
 import './style.scss'
-import Popup from 'components/popup/comingsoon'
 import { connectWallet } from 'utils/connectWallet'
 import { getBalance } from 'utils/Wallet'
-import Popup from 'components/popup/comingsoon-old'
+import Popup from 'components/popup/comingsoon-button'
 
 const Header = () => {
   const [account, setAccount] = useState(false)

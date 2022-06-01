@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 
 import './style.scss'
 import Items from 'assets/data/items.json'
-import Popup from 'components/popup/comingsoon-old'
+import Popup from 'components/popup/comingsoon-button'
 
 const Detail = () => {
   const { itemId } = useParams()
