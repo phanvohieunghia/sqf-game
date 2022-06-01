@@ -246,7 +246,7 @@ const MarketPlace = () => {
             <div className="col-xl-12">
               <div className="filter">
                 <div
-                  className="filter-title primary-tex-gray font-weight-700 font-size-18"
+                  className="title primary-tex-gray font-weight-700 "
                   onClick={toggleDrawerNav('right', true)}
                 >
                   Filter

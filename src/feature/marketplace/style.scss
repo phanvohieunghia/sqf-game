@@ -323,13 +323,17 @@
       .filter {
         flex-direction: column;
         align-items: flex-start;
+        .title {
+          font-size: 2.2rem;
+          margin-bottom: 12px;
+        }
         .select {
           margin-bottom: 8px;
+          margin: 0 0 15px;
+          width: 100%;
         }
         .input {
-          margin-left: 8px;
-          margin-right: 8px;
-          width: calc(100% - 16px);
+          width: 100%;
         }
         .icon {
           margin-top: 10px;
@@ -342,9 +346,7 @@
     .main {
       .filter {
         .select {
-          margin-left: 8px;
-          margin-right: 8px;
-          width: calc(100% - 16px - 56px);
+          width: 100%;
         }
       }
       .list-item .container .row .item .wrapper {

@@ -45,9 +45,7 @@ export async function send(txHash) {
     if (tx) {
       return tx;
     }
-
   }
-
   // return "hahahaha";
 }
 

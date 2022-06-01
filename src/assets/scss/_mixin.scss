@@ -4,3 +4,19 @@
   align-items: $alignItems;
   flex-direction: $flexDirection;
 }
+@mixin yelow-gradient-color() {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(180deg, #fde426 10%, #c07320 90%);
+}
+@mixin gray-gradient-color() {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(180deg, #e9e9e6 10%, #94918e 90%);
+}
+@mixin red-gradient-color() {
+  font-weight: 900;
+  color: #b20102;
+  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff,
+    1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}

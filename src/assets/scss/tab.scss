@@ -29,12 +29,13 @@
     filter: drop-shadow(0 0 4px #fcd130);
   }
   @include media('screen', '<tablet') {
-    .tab2 {
-      .item2 {
-        margin-left: 6px;
-        margin-right: 6px;
-        width: 140px;
-      }
-    }
+    width: 100%;
+    //   .tab2 {
+    //     .item2 {
+    //       margin-left: 6px;
+    //       margin-right: 6px;
+    //       width: 140px;
+    //     }
+    //   }
   }
 }

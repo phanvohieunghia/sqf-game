@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 import './style.scss'
 import Items from 'assets/data/items.json'
 import Popup from 'components/popup/comingsoon-old'
-// import SetItems from 'assets/data/set-items.json'
 
 const Detail = () => {
   const { itemId } = useParams()

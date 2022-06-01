@@ -22,10 +22,7 @@ const MarketplaceSmartContractABI = Config ? Config.BUSDSmartContractABI : null;
 const rpcUrl = Config ? Config.rpcUrl : null;
 const web3 = Config ? new Web3(rpcUrl) : null;
 
-
 // Call constructor contract and set to local variable;
-
-
 
 
 export const Approve = async ( addressToApprove, values)  => { 

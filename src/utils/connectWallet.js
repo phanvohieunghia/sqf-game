@@ -8,7 +8,7 @@ export async function listenEvent() {
 
   if (window.ethereum) {
     window.ethereum.on("accountsChanged", async function (accounts) {
-          window.location.reload();
+      window.location.reload();
     });
     window.ethereum.on("chainChanged", (chainId) => {
       // Handle the new chain.
@@ -17,14 +17,14 @@ export async function listenEvent() {
       window.location.reload();
     });
   }
-  
+
 }
 
 export async function connectWallet() {
   if (window.ethereum) {
     await window.ethereum.request({ method: "eth_requestAccounts" });
     const metamaskChainId = web3.utils.toBN(window.ethereum.chainId).toNumber()
-    console.log(window.ethereum.selectedAddress);
+    // console.log(window.ethereum.selectedAddress);
     // if (metamaskChainId !== chainId) {
     //   alert(`Wrong network, select ${netWork} and try again!`);
     //   window.location.reload();

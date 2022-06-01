@@ -1,5 +1,4 @@
 .fireflys {
-  // background-image: linear-gradient(180deg, #00123a 10%, #010c10 90%);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -27,7 +26,6 @@
   transform-origin: -10vw;
 }
 .firefly::before {
-  // background: black;
   background: rgba(0, 0, 0, 0.199);
   opacity: 0.4;
   animation: drift ease alternate infinite;
@@ -1323,7 +1321,6 @@
     transform: translateX(-38vw) translateY(-12vh) scale(0.73);
   }
 }
-
 @keyframes drift {
   0% {
     transform: rotate(0deg);
@@ -1332,7 +1329,6 @@
     transform: rotate(360deg);
   }
 }
-
 @keyframes flash {
   0%,
   30%,

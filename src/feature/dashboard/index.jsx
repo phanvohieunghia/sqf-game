@@ -8,14 +8,14 @@ const Dashboard = () => {
   // const { pathname } = useLocation()
   return (
     <div id="dashboard">
-      <div className="tab">
-        {/* <NavLink
+      {/* <div className="tab"> */}
+      {/* <NavLink
           to="account"
           className={'item' + (pathname === '/' ? ' active' : '')}
         >
           Account
         </NavLink> */}
-        {/* <NavLink to="leaderboard" className="item">
+      {/* <NavLink to="leaderboard" className="item">
           <Popup />
           Inventory
         </NavLink>
@@ -23,7 +23,7 @@ const Dashboard = () => {
           <Popup />
           Selling
         </NavLink> */}
-      </div>
+      {/* </div> */}
       <Outlet />
     </div>
   )

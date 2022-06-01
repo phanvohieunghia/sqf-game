@@ -12,25 +12,21 @@ const Account = () => {
           <h1 className="primary-tex-yellow">My SQF Staking</h1>
           <div className="info">
             <div className="info-item">
-              <div className="title primary-tex-gray font-weight-700 font-size-18">
+              <div className="title primary-tex-gray font-weight-700 ">
                 TOTAL STAKED
               </div>
               <span className="coin">
                 <span className="primary-tex-yellow font-weight-700">0</span>
-                <span className="primary-tex-gray font-weight-700 font-size-18">
-                  SQF
-                </span>
+                <span className="primary-tex-gray font-weight-700 ">SQF</span>
               </span>
             </div>
             <div className="info-item">
-              <div className="title primary-tex-gray font-weight-700 font-size-18">
+              <div className="title primary-tex-gray font-weight-700 ">
                 AVAILABLE WALLET
               </div>
               <span className="coin">
                 <span className="primary-tex-yellow font-weight-700">0</span>
-                <span className="primary-tex-gray font-weight-700 font-size-18">
-                  SQF
-                </span>
+                <span className="primary-tex-gray font-weight-700 ">SQF</span>
               </span>
             </div>
           </div>
@@ -53,9 +49,7 @@ const Account = () => {
             <h1 className="primary-tex-yellow">Total Staked</h1>
             <div className="coin">
               <span className="primary-tex-yellow font-weight-700">0</span>
-              <span className="primary-tex-gray font-weight-700 font-size-18">
-                SQF
-              </span>
+              <span className="primary-tex-gray font-weight-700 ">SQF</span>
             </div>
             <Icons.Lock height={'50'} />
           </div>
@@ -63,12 +57,10 @@ const Account = () => {
           <div className="item right">
             <h1 className="primary-tex-yellow">My Rank</h1>
             <div className="rank-box">
-              <span className="primary-tex-gray font-weight-700 font-size-18">
-                Rank: ~
-              </span>
-              <span className="primary-tex-gray font-weight-700 font-size-18">
+              <span className="primary-tex-gray font-weight-700 ">Rank: ~</span>
+              <span className="primary-tex-gray font-weight-700 ">
                 Point:
-                <span className="primary-tex-yellow font-size-18">0</span>
+                <span className="primary-tex-yellow ">0</span>
               </span>
             </div>
           </div>
@@ -81,9 +73,7 @@ const Account = () => {
               <h1 className="primary-tex-yellow">Claimable</h1>
               <div className="coin">
                 <span className="primary-tex-yellow font-weight-700">0</span>
-                <span className="primary-tex-gray font-weight-700 font-size-18">
-                  SQF
-                </span>
+                <span className="primary-tex-gray font-weight-700 ">SQF</span>
               </div>
             </div>
             <div className="claim-button">

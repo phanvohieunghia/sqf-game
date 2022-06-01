@@ -50,18 +50,26 @@
         }
       }
     }
-  }
-  @include media('screen', '<laptop') {
-    .box {
+    @include media('screen', '<laptop') {
       flex-direction: column;
-      margin-left: 12px;
-      margin-right: 12px;
-      width: calc(100% - 24px);
+      width: 100%;
+      .left {
+        margin-left: 8px;
+        margin-right: 8px;
+      }
       .right {
-        padding-left: 0px;
+        padding-left: 0;
         h1 {
-          padding-top: 32px;
-          padding-bottom: 20px;
+          padding-top: 20px;
+          padding-bottom: 0;
+        }
+        .claim-button {
+          margin-left: auto;
+          margin-right: auto;
+          button {
+            font-weight: 700;
+            font-size: 1.6rem;
+          }
         }
       }
     }

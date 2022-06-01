@@ -14,6 +14,7 @@ const Detail = () => {
   const selectorObj = useSelector(detailPopupSelector)
   const currentItem = selectorObj.content
   function handleDetailPopup() {
+    mainRef.current.classList.add('close-popup')
     setTimeout(() => {
       dispatch(detailPopupSlice.actions.closePopup(null))
     }, 370)
@@ -26,9 +27,9 @@ const Detail = () => {
       {selectorObj.popupState && (
         <div
           id="popup-detail"
-          ref={mainRef}
           onClick={handleDetailPopup}
           className="popup-detail"
+          ref={mainRef}
         >
           <div className="wrapper" onClick={(e) => handleStop(e)}>
             <div className="close" onClick={handleDetailPopup}>

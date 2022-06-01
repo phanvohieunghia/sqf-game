@@ -121,6 +121,7 @@
       margin-top: 0;
       .item {
         min-width: unset;
+        padding: 12px;
         max-width: unset;
         margin-right: 25px;
         width: calc(100% - 50px);
@@ -128,6 +129,15 @@
           flex-direction: column;
           .content {
             align-self: flex-start;
+          }
+        }
+        .info {
+          margin: 17px 0;
+          flex-direction: column;
+          &-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
           }
         }
       }

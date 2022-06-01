@@ -44,7 +44,7 @@ const Token = () => {
         </p>
         <p className="primary-tex-gray font-weight-700">
           <div>
-            Unlock <span className="yellow-color">100%</span> when claim
+            Unlock <span>100%</span> when claim
           </div>
         </p>
         <div className="claim-button">

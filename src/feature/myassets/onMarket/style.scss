@@ -2,11 +2,4 @@
 @import 'assets/scss/responsive';
 
 #myassets {
-  .on-market-box {
-  }
-  @include media('screen', '<laptop') {
-    .list-item {
-      margin-top: 20px !important;
-    }
-  }
 }

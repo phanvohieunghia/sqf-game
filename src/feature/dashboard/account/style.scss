@@ -1,4 +1,6 @@
 @import 'assets/scss/valuable';
+@import 'assets/scss/mixin';
+@import 'assets/scss/animation';
 @import 'assets/scss/responsive';
 
 #dashboard {
@@ -12,106 +14,90 @@
       font-weight: 700;
     }
     h3:not(:first-child) {
-      margin-top: 50px;
+      margin-top: 30px;
     }
-    .content {
+    .account-box {
       background-color: rgba(101, 37, 26, 0.22);
       border-radius: 5px;
       border: 2px solid $orange-color;
       padding: 8px 12px;
-      &-wrap {
-        margin: auto;
-        width: 60%;
-      }
       .item {
         margin-bottom: 16px;
         font-size: 1.6rem;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         &:first-child {
           margin-top: 16px;
         }
-        &-content {
-          display: flex;
-          font-weight: 700;
-          .unit {
-            display: flex;
-            min-width: 40px;
-          }
-        }
         label {
+          flex-basis: 200px;
           width: 200px;
           color: #bbbdbf;
           font-size: 1.8rem;
           font-weight: 800;
         }
-        span {
-          margin-left: 8px;
-        }
-        .unit {
-          flex-basis: 30px;
+        .content {
+          display: flex;
+          flex-basis: 100px;
+          font-weight: 700;
+          .number {
+            @include yelow-gradient-color;
+            flex-grow: 1;
+          }
+          .unit {
+            @include gray-gradient-color;
+          }
         }
       }
       .item2 {
-        width: 100%;
-        margin-bottom: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
         font-size: 1.8rem;
         background-color: #59070bc9;
         border: 2px solid $orange-color;
         border-radius: 10px;
+        margin-bottom: 16px;
         margin-left: auto;
         margin-right: auto;
-        padding: 8px 20px;
-        text-align: center;
-        display: flex;
-        justify-content: space-between;
+        padding: 8px 12px;
         cursor: pointer;
         user-select: none;
+        &:hover .icon svg {
+          fill: $yellow-color;
+        }
         label {
-          color: #bbbdbf;
-          cursor: pointer;
+          @include gray-gradient-color;
+          white-space: nowrap;
         }
-        .btn-copy {
+        .text {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          @include yelow-gradient-color;
           flex: 1;
+        }
+        .icon {
           display: flex;
-          justify-content: flex-end;
           transition: all 0.5s ease-in-out;
+          overflow: hidden;
+          flex-basis: 30px;
+          min-width: 30px;
           svg {
+            transition: all 0.4s ease-in-out;
             fill: $white-color;
-            transition: all 0.5s ease-in-out;
-          }
-          &:hover {
-            cursor: pointer;
-            svg {
-              transform: scale(1.2);
-              fill: #ebc126;
-            }
+            animation: clipboard 0.5s ease-in-out;
           }
         }
       }
     }
-  }
-  @include media('screen', '<laptop') {
-    .account {
-      .content-wrap {
-        width: 100%;
+    @include media('screen', '<laptop') {
+      .account-box {
+        .item2 {
+          width: 100%;
+        }
       }
-      .item2 {
-        display: flex;
-      }
-      .ref {
-        display: block;
-        flex: 1;
-        width: 200px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-overflow: ellipsis;
-      }
-    }
-    .hd-items {
-      flex-direction: column;
-      width: 100%;
     }
   }
 }
