@@ -354,7 +354,7 @@ const Item = (props) => {
         <div className="button">
           <button>
             <Popup />
-            Sell
+            Buy
           </button>
         </div>
       </div>

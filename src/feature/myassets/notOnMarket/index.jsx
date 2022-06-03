@@ -93,7 +93,7 @@ const Item = (props) => {
         <div className="button">
           <button>
             <Popup />
-            Buy
+            Sell
           </button>
         </div>
       </div>
