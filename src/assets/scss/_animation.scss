@@ -22,12 +22,76 @@
     opacity: 0;
   }
 }
+// @keyframes sidebar-mobile {
+//   0% {
+//     transform: translateX(-100%);
+//     opacity: 0;
+//   }
+//   5% {
+//     opacity: 0.7;
+//   }
+//   50% {
+//     transform: translateX(0);
+//   }
+//   55% {
+//     transform: translateX(-10%);
+//     opacity: 1;
+//   }
+//   60% {
+//     transform: translateX(-12%);
+//   }
+//   80% {
+//     transform: translateX(0);
+//   }
+//   85% {
+//     transform: translateX(-2%);
+//   }
+//   87% {
+//     transform: translateX(-3%);
+//   }
+//   100% {
+//     transform: translateX(0);
+//   }
+// }
 @keyframes sidebar-mobile {
-  from {
+  0% {
     transform: translateX(-100%);
   }
-  to {
-    transform: translateX(0);
+
+  12% {
+    transform: translateX(-90%);
+  }
+
+  24% {
+    transform: translateX(-56%);
+  }
+
+  36% {
+    transform: translateX(-2%);
+  }
+
+  54% {
+    transform: translateX(-25%);
+  }
+
+  74% {
+    transform: translateX(-1.63%);
+  }
+
+  82% {
+    transform: translateX(-6%);
+  }
+
+  92% {
+    transform: translateX(-0.66%);
+  }
+
+  96% {
+    transform: translateX(-1.54%);
+  }
+
+  100% {
+    transform: translateX(0%);
   }
 }
 @keyframes show-detail-popup-main {

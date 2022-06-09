@@ -17,9 +17,8 @@
   justify-content: flex-start;
   align-items: flex-start;
   padding-top: 70px;
-
   z-index: 10;
-  animation: sidebar-mobile 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  animation: sidebar-mobile 0.8s linear;
   .list {
     width: 100%;
     .item {
