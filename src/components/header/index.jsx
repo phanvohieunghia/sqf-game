@@ -1,52 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import './style.scss'
-import { connectWallet } from 'utils/connectWallet'
-import { getBalance } from 'utils/Wallet'
-// import Popup from 'components/popup/comingsoon-button'
 
 const Header = () => {
-  const [account, setAccount] = useState(false)
-  const [balanceToken, setBalanceToken] = useState(0)
-  const [balanceBUSD, setBalanceBUSD] = useState(0)
-
-  useEffect(() => {
-    async function load() {
-      const account = await connectWallet()
-      const balance = await getBalance()
-      if (balance.balanceBUSD && balance.availBalance) {
-        setBalanceBUSD(balance.balanceBUSD)
-        setBalanceToken(balance.availBalance)
-      }
-      setAccount(account)
-    }
-    load()
-  }, [])
-
   return (
     <header>
       <div className="hd-items">
         <div className="item">
           <img src={require('assets/img/coin.png')} alt="error png" />
-          <span className="primary-tex-yellow font-weight-700">
-            {balanceToken}
-          </span>
+          <span className="primary-tex-yellow font-weight-700">0</span>
         </div>
         <div className="item">
           <img src={require('assets/img/coin2.png')} alt="error png" />
-          <span className="primary-tex-yellow font-weight-700">
-            {balanceBUSD}
-          </span>
+          <span className="primary-tex-yellow font-weight-700">0</span>
         </div>
       </div>
-      {account ? (
-        <a href="/" className="account">
-          {/* <Popup /> */}
-        </a>
+      {true ? (
+        <a href="/" className="account"></a>
       ) : (
-        <a href="/" className="button">
-          {/* <Popup /> */}
-        </a>
+        <a href="/" className="button"></a>
       )}
     </header>
   )
